@@ -801,6 +801,13 @@ ul li,
 ol li {
     margin: 8px 0;
 }
+@font-face {
+    font-family: orange juice 2.0;
+    src: https://github.com/ACha-xwx/ACha-xwx.github.io/raw/refs/heads/master/fonts/orange%20juice%202.0.ttf;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 @keyframes loop1 {
     from {
         transform: rotate(30deg);
