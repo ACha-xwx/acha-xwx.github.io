@@ -1,16 +1,17 @@
-
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+
+  <!DOCTYPE html>
+  <html lang="zh-CN">
+
+  <head>
     <meta charset="utf-8" />
-    <title>Archives | 阿猹的小窝</title>
+    <title>
+      Archives | 阿猹的小窝
+    </title>
     <meta name="author" content="ACha_" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
     <link rel="preconnect" href="https://s4.zstatic.net" />
 <script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
@@ -46,19 +47,20 @@
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<meta name="generator" content="Hexo 7.3.0"></head>
-<body>
+  <meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
     <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/cat.gif" />
-                </div>
-            </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+      <transition name="fade">
+        <div id="loading" v-show="loading">
+          <div id="loading-circle">
+            <h2>LOADING</h2>
+            <p>加载过慢请开启缓存 浏览器默认开启</p>
+            <img src="/images/cat.gif" />
+          </div>
+        </div>
+      </transition>
+      <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
             <span>阿猹的小窝</span>
@@ -87,6 +89,11 @@
         <a href="/tags">
             <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/dino">
+            <i class="fa-solid fa-paw fa-fw"></i>
+            <span>&ensp;Dino Run</span>
         </a>
         
     </nav>
@@ -143,6 +150,15 @@
                     </div>
                 </a>
                 
+                <a href="/dino">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-paw fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Dino Run</div>
+                    </div>
+                </a>
+                
             </div>
         </transition>
     </nav>
@@ -152,7 +168,7 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
+          
 <div id="archives">
     
     <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
@@ -186,7 +202,7 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="color: #00bcd4">
+                            <a href="/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="color: #00a596">
                                 自我介绍
                             </a>
                         </span>
@@ -255,14 +271,110 @@
 
         </div>
         
-        <transition name="fade">
+          <transition name="fade">
             <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
+              <img id="preview-content" ref="previewContent" />
             </div>
-        </transition>
-        
+          </transition>
+          
     </div>
     <script src="/js/main.js"></script>
     
-</body>
-</html>
+          <div id="fps" style="
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
+          z-index: 10000;
+          padding: 4px 12px;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 12px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          color: #00ff00;
+          font-size: 13px;
+          font-family: 'Monaco', 'Consolas', monospace;
+          font-weight: bold;
+          pointer-events: none;
+          display: flex;
+          align-items: center;
+          transition: color 0.3s ease;
+          ">
+            <span id="fps-dot"
+              style="width: 8px; height: 8px; background: currentColor; border-radius: 50%; margin-right: 8px; box-shadow: 0 0 8px currentColor;"></span>
+            <span id="fps-text">FPS: 60</span>
+          </div>
+          <canvas id="fireworks"
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999"></canvas>
+
+          <script>
+            var OriginTitle = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function () {
+              if (document.hidden) {
+                document.title = '快回来呀 ヾ(≧へ≦)〃';
+                clearTimeout(titleTime);
+              } else {
+                document.title = '欢迎光临 ヾ(≧▽≦*)o';
+                titleTime = setTimeout(function () { document.title = OriginTitle; }, 1000);
+              }
+            });
+            // 增强版 FPS 实时变色逻辑
+            (function () {
+              var fpsElement = document.getElementById('fps');
+              var fpsText = document.getElementById('fps-text');
+              var lastTime = performance.now(), frames = 0;
+
+              function update() {
+                var now = performance.now();
+                frames++;
+                if (now > 1000 + lastTime) {
+                  var fps = Math.round((frames * 1000) / (now - lastTime));
+                  fpsText.innerHTML = 'FPS: ' + fps;
+
+                  // --- 动态根据帧率改变主题色 ---
+                  if (fps >= 55) {
+                    fpsElement.style.color = '#00ff00'; // 满血丝滑：翠绿
+                  } else if (fps >= 30) {
+                    fpsElement.style.color = '#ffaa00'; // 稍有压力：明橙
+                  } else {
+                    fpsElement.style.color = '#ff4444'; // 严重掉帧：警示红
+                  }
+
+                  frames = 0;
+                  lastTime = now;
+                }
+                requestAnimationFrame(update);
+              }
+              update();
+            })();
+            const canvas = document.getElementById('fireworks');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize); resize();
+            window.addEventListener('mousemove', (e) => {
+              for (let i = 0; i < 2; i++) {
+                particles.push({
+                  x: e.clientX, y: e.clientY, size: Math.random() * 3 + 1,
+                  spX: (Math.random() - 0.5) * 2, spY: (Math.random() - 0.5) * 2,
+                  color: `hsl(${Math.random() * 360}, 50%, 50%)`, alpha: 1
+                });
+              }
+            });
+            function animate() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              particles.forEach((p, i) => {
+                p.x += p.spX; p.y += p.spY; p.alpha -= 0.02;
+                if (p.alpha <= 0) return particles.splice(i, 1);
+                ctx.globalAlpha = p.alpha; ctx.fillStyle = p.color;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+              });
+              requestAnimationFrame(animate);
+            }
+            animate();
+          </script>
+  </body>
+
+  </html>
