@@ -802,8 +802,8 @@ ol li {
     margin: 8px 0;
 }
 @font-face {
-    font-family: orange juice 2.0;
-    src: https://github.com/ACha-xwx/ACha-xwx.github.io/raw/refs/heads/master/fonts/orange%20juice%202.0.ttf;
+    font-family: "orange juice 2.0";
+    src: url(https://github.com/ACha-xwx/ACha-xwx.github.io/raw/refs/heads/master/fonts/orange_juice_2.0.ttf);
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -979,4 +979,17 @@ ol li {
     ol {
         padding-left: 20px;
     }
+}
+.tk-owowo .tk-owowo-panel {
+    max-height: 250px !important;
+    overflow-y: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+.tk-owowo .tk-owowo-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
 }
