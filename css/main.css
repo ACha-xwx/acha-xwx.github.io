@@ -801,9 +801,29 @@ ul li,
 ol li {
     margin: 8px 0;
 }
+.OwO .OwO-body {
+    width: 350px !important; 
+    min-width: 300px !important;
+    display: block !important;
+    position: absolute !important;
+    z-index: 9999 !important;
+    background: #fff !important;
+}
+.OwO .OwO-body .OwO-items-show {
+    height: 250px !important;
+    max-height: 250px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    overflow-y: auto !important;
+}
+.OwO .OwO-body .OwO-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 35px !important;
+}
 @font-face {
-    font-family: "orange juice 2.0";
-    src: url(https://github.com/ACha-xwx/ACha-xwx.github.io/raw/refs/heads/master/fonts/orange_juice_2.0.ttf);
+    font-family: "";
+    src: url();
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -979,17 +999,4 @@ ol li {
     ol {
         padding-left: 20px;
     }
-}
-.tk-owowo .tk-owowo-panel {
-    max-height: 250px !important;
-    overflow-y: auto !important;
-    width: 100% !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-}
-.tk-owowo .tk-owowo-nav {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
 }
