@@ -12,6 +12,10 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <link rel="icon" href="/images/avatar.jpg" />
     <link rel="preconnect" href="https://s4.zstatic.net" />
 <script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
@@ -202,7 +206,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="color: #ff7d73">
+                <a href="/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="color: #00bcd4">
                     自我介绍
                 </a>
             </span>
@@ -338,31 +342,169 @@
 
 
         
-          <div id="fps" style="
-          position: fixed;
-          bottom: 20px;
-          left: 20px;
-          z-index: 10000;
-          padding: 4px 12px;
-          background: rgba(0, 0, 0, 0.4);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 12px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-          color: #00ff00;
-          font-size: 13px;
-          font-family: 'Monaco', 'Consolas', monospace;
-          font-weight: bold;
-          pointer-events: none;
-          display: flex;
-          align-items: center;
-          transition: color 0.3s ease;
-          ">
-            <span id="fps-dot"
-              style="width: 8px; height: 8px; background: currentColor; border-radius: 50%; margin-right: 8px; box-shadow: 0 0 8px currentColor;"></span>
-            <span id="fps-text">FPS: 60</span>
+          <div id="dashboard-container">
+            <div id="fps-monitor">
+              <span id="fps-dot"></span>
+              <span id="fps-text">FPS: --</span>
+            </div>
+
+            <div id="traffic-monitor">
+              <span>👁️ PV: <span id="busuanzi_value_site_pv" class="data-num">...</span></span>
+              <span>👤 UV: <span id="busuanzi_value_site_uv" class="data-num">...</span></span>
+            </div>
+
+            <meting-js server="netease" type="playlist" id="17820803221" fixed="false" mini="false" order="list"
+              loop="all" list-folded="true" theme="#00ff00">
+            </meting-js>
           </div>
+
+          <style>
+            #dashboard-container {
+              position: fixed;
+              bottom: 20px;
+              left: 20px;
+              z-index: 9999;
+              width: 360px;
+              background: rgba(255, 255, 255, 0.85);
+              backdrop-filter: blur(15px);
+              -webkit-backdrop-filter: blur(15px);
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 12px;
+              box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+              overflow: hidden;
+              font-family: inherit;
+              transition: all 0.3s ease;
+            }
+
+            #fps-monitor {
+              padding: 10px 15px;
+              display: flex;
+              align-items: center;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+              color: #333;
+              font-size: 14px;
+              font-weight: bold;
+            }
+
+            #fps-dot {
+              width: 8px;
+              height: 8px;
+              background: currentColor;
+              border-radius: 50%;
+              margin-right: 8px;
+              box-shadow: 0 0 6px currentColor;
+              animation: blink 1.5s infinite;
+            }
+
+            #traffic-monitor {
+              padding: 8px 15px;
+              display: flex;
+              justify-content: space-between;
+              font-size: 12px;
+              color: #555;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            }
+
+            .data-num {
+              font-weight: bold;
+              color: #0078d7;
+            }
+
+            .aplayer {
+              margin: 0 !important;
+              background: transparent !important;
+              box-shadow: none !important;
+              color: #333 !important;
+            }
+
+            .aplayer .aplayer-info {
+              border-bottom: none !important;
+              padding: 10px !important;
+            }
+
+            .aplayer .aplayer-info .aplayer-music .aplayer-title {
+              color: #111 !important;
+              font-size: 14px !important;
+              font-weight: bold;
+            }
+
+            .aplayer .aplayer-info .aplayer-music .aplayer-author {
+              color: #666 !important;
+            }
+
+            .aplayer .aplayer-list ol li {
+              border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+            }
+
+            .aplayer .aplayer-list ol li:hover {
+              background: rgba(0, 0, 0, 0.04) !important;
+            }
+
+            .aplayer .aplayer-list ol li.aplayer-list-light {
+              background: rgba(0, 0, 0, 0.08) !important;
+            }
+
+            .aplayer .aplayer-list ol li .aplayer-list-title {
+              color: #222 !important;
+              font-weight: bold;
+            }
+
+            .aplayer .aplayer-list ol li .aplayer-list-author {
+              color: #777 !important;
+            }
+
+            .aplayer .aplayer-list ol li .aplayer-list-index {
+              color: #999 !important;
+            }
+            
+            .aplayer .aplayer-lrc:before,
+            .aplayer .aplayer-lrc:after {
+            display: none !important;
+            }
+
+            @keyframes blink {
+
+              0%,
+              100% {
+                opacity: 1;
+              }
+
+              50% {
+                opacity: 0.3;
+              }
+            }
+          </style>
+
+          <script>
+              (function () {
+                let lastTime = performance.now();
+                let frame = 0;
+                const fpsText = document.getElementById('fps-text');
+                const fpsDot = document.getElementById('fps-dot');
+                function updateFPS() {
+                  const now = performance.now();
+                  frame++;
+                  if (now - lastTime >= 1000) {
+                    const currentFps = Math.round((frame * 1000) / (now - lastTime));
+                    if (fpsText) fpsText.innerText = `FPS: ${currentFps}`;
+                    if (currentFps >= 55) {
+                      if (fpsText) fpsText.style.color = '#10b981';
+                      if (fpsDot) fpsDot.style.color = '#10b981';
+                    } else if (currentFps >= 30) {
+                      if (fpsText) fpsText.style.color = '#f59e0b';
+                      if (fpsDot) fpsDot.style.color = '#f59e0b';
+                    } else {
+                      if (fpsText) fpsText.style.color = '#ef4444';
+                      if (fpsDot) fpsDot.style.color = '#ef4444';
+                    }
+                    frame = 0;
+                    lastTime = now;
+                  }
+                  requestAnimationFrame(updateFPS);
+                }
+                updateFPS();
+              })();
+          </script>
           <canvas id="fireworks"
             style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999"></canvas>
 
@@ -378,35 +520,7 @@
                 titleTime = setTimeout(function () { document.title = OriginTitle; }, 1000);
               }
             });
-            // 增强版 FPS 实时变色逻辑
-            (function () {
-              var fpsElement = document.getElementById('fps');
-              var fpsText = document.getElementById('fps-text');
-              var lastTime = performance.now(), frames = 0;
 
-              function update() {
-                var now = performance.now();
-                frames++;
-                if (now > 1000 + lastTime) {
-                  var fps = Math.round((frames * 1000) / (now - lastTime));
-                  fpsText.innerHTML = 'FPS: ' + fps;
-
-                  // --- 动态根据帧率改变主题色 ---
-                  if (fps >= 55) {
-                    fpsElement.style.color = '#00ff00'; // 满血丝滑：翠绿
-                  } else if (fps >= 30) {
-                    fpsElement.style.color = '#ffaa00'; // 稍有压力：明橙
-                  } else {
-                    fpsElement.style.color = '#ff4444'; // 严重掉帧：警示红
-                  }
-
-                  frames = 0;
-                  lastTime = now;
-                }
-                requestAnimationFrame(update);
-              }
-              update();
-            })();
             const canvas = document.getElementById('fireworks');
             const ctx = canvas.getContext('2d');
             let particles = [];
