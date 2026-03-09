@@ -259,6 +259,9 @@
 
 
         
+          <div id="dashboard-toggle" onclick="toggleDashboard()">
+            <span id="toggle-icon" style="transition: transform 0.3s ease; display: inline-block;">🎵</span>
+          </div>
           <div id="dashboard-container">
             <div id="fps-monitor">
               <span id="fps-dot"></span>
@@ -278,7 +281,7 @@
           <style>
             #dashboard-container {
               position: fixed;
-              bottom: 20px;
+              bottom: 80px;
               left: 20px;
               z-index: 9999;
               width: 360px;
@@ -290,7 +293,8 @@
               box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
               overflow: hidden;
               font-family: inherit;
-              transition: all 0.3s ease;
+              transform-origin: bottom left;
+              transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             }
 
             #fps-monitor {
@@ -320,6 +324,24 @@
               font-size: 12px;
               color: #555;
               border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            }
+
+            #dashboard-toggle {
+              position: fixed; bottom: 20px; left: 20px; z-index: 10000;
+              width: 44px; height: 44px;
+              background: rgba(255, 255, 255, 0.85);
+              backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+              border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 50%;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+              cursor: pointer; display: flex; justify-content: center; align-items: center;
+              font-size: 20px; color: #333; transition: all 0.3s ease;
+            }
+            #dashboard-toggle:hover { transform: scale(1.1); }
+
+            .dashboard-hidden {
+              opacity: 0 !important;
+              transform: translateY(20px) scale(0.9) !important;
+              pointer-events: none !important;
             }
 
             .data-num {
@@ -390,6 +412,17 @@
                 opacity: 0.3;
               }
             }
+
+            @media screen and (max-width: 768px) {
+              #dashboard-container {
+                width: calc(100vw - 30px) !important; 
+                left: 15px !important;
+                bottom: 75px !important;
+              }
+            #fps-monitor, #traffic-monitor { padding: 6px 12px !important; }
+            #fps-text { font-size: 13px !important; }
+            .aplayer .aplayer-list { max-height: 200px !important; }
+            }
           </style>
 
           <script>
@@ -421,6 +454,20 @@
                 }
                 updateFPS();
               })();
+                function toggleDashboard() {
+                  const dashboard = document.getElementById('dashboard-container');
+                  const icon = document.getElementById('toggle-icon');
+                  if (dashboard.classList.contains('dashboard-hidden')) {
+                    dashboard.classList.remove('dashboard-hidden');
+                    icon.innerHTML = '✖'; 
+                    icon.style.transform = 'rotate(90deg)'; 
+                  } else {
+                    dashboard.classList.add('dashboard-hidden');
+                    icon.innerHTML = '🎵'; 
+                    icon.style.transform = 'rotate(0deg)'; 
+                  }
+                }
+                document.getElementById('dashboard-container').classList.add('dashboard-hidden');
           </script>
           <canvas id="fireworks"
             style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999"></canvas>
