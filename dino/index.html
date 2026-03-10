@@ -206,12 +206,34 @@
     </div>
     
     <div class="content" v-pre>
-        <div id="dino-container" style="width: 100%; max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee;">
-    <iframe src="https://wayou.github.io/t-rex-runner/" frameborder="0" scrolling="no" width="100%" height="200px"></iframe>
+        <div id="dino-container" style="width: 100%; max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; touch-action: pan-y;">
+    <iframe src="https://wayou.github.io/t-rex-runner/" frameborder="0" scrolling="no" width="100%" height="200px" style="display: block;"></iframe>
 </div>
-<p style="text-align: center; margin-top: 20px; color: #666;">按 <b>空格</b> 跳跃，按 <b>↓</b> 躲避</p>
 
+<p class="desktop-tips" style="text-align: center; margin-top: 20px; color: #666;">
+  按 <b>空格</b> 跳跃，按 <b>↓</b> 躲避
+</p>
 
+<p class="mobile-tips" style="text-align: center; margin-top: 20px; color: #ff9800; font-weight: bold; letter-spacing: 1px;">
+  👆 触控屏幕：点击游戏画面即可跳跃！
+</p>
+
+<style>
+  .mobile-tips {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .desktop-tips {
+      display: none !important;
+    }
+    .mobile-tips {
+      display: block !important;
+    }
+    #dino-container iframe {
+      height: 250px !important;
+    }
+  }
+</style>
     </div>
     
     
