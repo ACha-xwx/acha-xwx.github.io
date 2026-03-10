@@ -257,7 +257,7 @@
 <li><strong>网易云音乐</strong>: <a target="_blank" rel="noopener" href="https://music.163.com/#/artist?id=%E8%BF%99%E9%87%8C%E5%A1%AB%E4%BD%A0%E7%9A%84%E6%AD%8C%E6%89%8BID">ACha_的歌手页</a></li>
 <li><strong>Bilibili</strong>: <a target="_blank" rel="noopener" href="https://space.bilibili.com/1232388510">阿猹的B站主页</a></li>
 <li><strong>GitHub</strong>: <a target="_blank" rel="noopener" href="https://github.com/ACha-xwx">ACha-xwx</a></li>
-<li><strong>Email</strong>: 欢迎通过 <a href="mailto:&#x78;&#x63;&#x68;&#x61;&#x72;&#x61;&#x70;&#x74;&#101;&#114;&#x31;&#x78;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x78;&#x63;&#x68;&#x61;&#x72;&#x61;&#x70;&#x74;&#101;&#114;&#x31;&#x78;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a> 交流音乐与技术！</li>
+<li><strong>Email</strong>: 欢迎通过 <a href="mailto:&#x78;&#99;&#x68;&#x61;&#x72;&#97;&#x70;&#116;&#101;&#x72;&#x31;&#120;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x78;&#99;&#x68;&#x61;&#x72;&#97;&#x70;&#116;&#101;&#x72;&#x31;&#120;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a> 交流音乐与技术！</li>
 </ul>
 
     </div>
@@ -274,7 +274,7 @@
     
 </div>
 
-            <footer id="footer">
+          <footer id="footer">
     <div id="footer-wrap">
         <div>
             &copy;
@@ -394,16 +394,30 @@
             }
 
             #dashboard-toggle {
-              position: fixed; bottom: 20px; left: 20px; z-index: 10000;
-              width: 44px; height: 44px;
+              position: fixed;
+              bottom: 20px;
+              left: 20px;
+              z-index: 10000;
+              width: 44px;
+              height: 44px;
               background: rgba(255, 255, 255, 0.85);
-              backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-              border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 50%;
+              backdrop-filter: blur(15px);
+              -webkit-backdrop-filter: blur(15px);
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 50%;
               box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-              cursor: pointer; display: flex; justify-content: center; align-items: center;
-              font-size: 20px; color: #333; transition: all 0.3s ease;
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 20px;
+              color: #333;
+              transition: all 0.3s ease;
             }
-            #dashboard-toggle:hover { transform: scale(1.1); }
+
+            #dashboard-toggle:hover {
+              transform: scale(1.1);
+            }
 
             .dashboard-hidden {
               opacity: 0 !important;
@@ -465,7 +479,7 @@
 
             .aplayer .aplayer-lrc:before,
             .aplayer .aplayer-lrc:after {
-            display: none !important;
+              display: none !important;
             }
 
             @keyframes blink {
@@ -482,13 +496,23 @@
 
             @media screen and (max-width: 768px) {
               #dashboard-container {
-                width: calc(100vw - 30px) !important; 
+                width: calc(100vw - 30px) !important;
                 left: 15px !important;
                 bottom: 75px !important;
               }
-            #fps-monitor, #traffic-monitor { padding: 6px 12px !important; }
-            #fps-text { font-size: 13px !important; }
-            .aplayer .aplayer-list { max-height: 200px !important; }
+
+              #fps-monitor,
+              #traffic-monitor {
+                padding: 6px 12px !important;
+              }
+
+              #fps-text {
+                font-size: 13px !important;
+              }
+
+              .aplayer .aplayer-list {
+                max-height: 200px !important;
+              }
             }
           </style>
 
@@ -521,20 +545,20 @@
                 }
                 updateFPS();
               })();
-                function toggleDashboard() {
-                  const dashboard = document.getElementById('dashboard-container');
-                  const icon = document.getElementById('toggle-icon');
-                  if (dashboard.classList.contains('dashboard-hidden')) {
-                    dashboard.classList.remove('dashboard-hidden');
-                    icon.innerHTML = '✖'; 
-                    icon.style.transform = 'rotate(90deg)'; 
-                  } else {
-                    dashboard.classList.add('dashboard-hidden');
-                    icon.innerHTML = '🎵'; 
-                    icon.style.transform = 'rotate(0deg)'; 
-                  }
-                }
-                document.getElementById('dashboard-container').classList.add('dashboard-hidden');
+            function toggleDashboard() {
+              const dashboard = document.getElementById('dashboard-container');
+              const icon = document.getElementById('toggle-icon');
+              if (dashboard.classList.contains('dashboard-hidden')) {
+                dashboard.classList.remove('dashboard-hidden');
+                icon.innerHTML = '✖';
+                icon.style.transform = 'rotate(90deg)';
+              } else {
+                dashboard.classList.add('dashboard-hidden');
+                icon.innerHTML = '🎵';
+                icon.style.transform = 'rotate(0deg)';
+              }
+            }
+            document.getElementById('dashboard-container').classList.add('dashboard-hidden');
           </script>
           <canvas id="fireworks"
             style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999"></canvas>
@@ -579,5 +603,4 @@
             animate();
           </script>
   </body>
-
   </html>

@@ -221,7 +221,7 @@
     
 </div>
 
-            <footer id="footer">
+          <footer id="footer">
     <div id="footer-wrap">
         <div>
             &copy;
@@ -341,16 +341,30 @@
             }
 
             #dashboard-toggle {
-              position: fixed; bottom: 20px; left: 20px; z-index: 10000;
-              width: 44px; height: 44px;
+              position: fixed;
+              bottom: 20px;
+              left: 20px;
+              z-index: 10000;
+              width: 44px;
+              height: 44px;
               background: rgba(255, 255, 255, 0.85);
-              backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-              border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 50%;
+              backdrop-filter: blur(15px);
+              -webkit-backdrop-filter: blur(15px);
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 50%;
               box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-              cursor: pointer; display: flex; justify-content: center; align-items: center;
-              font-size: 20px; color: #333; transition: all 0.3s ease;
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 20px;
+              color: #333;
+              transition: all 0.3s ease;
             }
-            #dashboard-toggle:hover { transform: scale(1.1); }
+
+            #dashboard-toggle:hover {
+              transform: scale(1.1);
+            }
 
             .dashboard-hidden {
               opacity: 0 !important;
@@ -412,7 +426,7 @@
 
             .aplayer .aplayer-lrc:before,
             .aplayer .aplayer-lrc:after {
-            display: none !important;
+              display: none !important;
             }
 
             @keyframes blink {
@@ -429,13 +443,23 @@
 
             @media screen and (max-width: 768px) {
               #dashboard-container {
-                width: calc(100vw - 30px) !important; 
+                width: calc(100vw - 30px) !important;
                 left: 15px !important;
                 bottom: 75px !important;
               }
-            #fps-monitor, #traffic-monitor { padding: 6px 12px !important; }
-            #fps-text { font-size: 13px !important; }
-            .aplayer .aplayer-list { max-height: 200px !important; }
+
+              #fps-monitor,
+              #traffic-monitor {
+                padding: 6px 12px !important;
+              }
+
+              #fps-text {
+                font-size: 13px !important;
+              }
+
+              .aplayer .aplayer-list {
+                max-height: 200px !important;
+              }
             }
           </style>
 
@@ -468,20 +492,20 @@
                 }
                 updateFPS();
               })();
-                function toggleDashboard() {
-                  const dashboard = document.getElementById('dashboard-container');
-                  const icon = document.getElementById('toggle-icon');
-                  if (dashboard.classList.contains('dashboard-hidden')) {
-                    dashboard.classList.remove('dashboard-hidden');
-                    icon.innerHTML = '✖'; 
-                    icon.style.transform = 'rotate(90deg)'; 
-                  } else {
-                    dashboard.classList.add('dashboard-hidden');
-                    icon.innerHTML = '🎵'; 
-                    icon.style.transform = 'rotate(0deg)'; 
-                  }
-                }
-                document.getElementById('dashboard-container').classList.add('dashboard-hidden');
+            function toggleDashboard() {
+              const dashboard = document.getElementById('dashboard-container');
+              const icon = document.getElementById('toggle-icon');
+              if (dashboard.classList.contains('dashboard-hidden')) {
+                dashboard.classList.remove('dashboard-hidden');
+                icon.innerHTML = '✖';
+                icon.style.transform = 'rotate(90deg)';
+              } else {
+                dashboard.classList.add('dashboard-hidden');
+                icon.innerHTML = '🎵';
+                icon.style.transform = 'rotate(0deg)';
+              }
+            }
+            document.getElementById('dashboard-container').classList.add('dashboard-hidden');
           </script>
           <canvas id="fireworks"
             style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999"></canvas>
@@ -526,5 +550,4 @@
             animate();
           </script>
   </body>
-
   </html>
