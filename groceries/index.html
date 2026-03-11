@@ -237,30 +237,95 @@
   </a>
 
   <a href="/ascii/" style="text-decoration: none; color: inherit;">
-    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
       <div style="font-size: 2rem; margin-bottom: 10px;">🔣</div>
-      <h3 style="margin: 0 0 10px 0; color: #333;">ASCII 艺术转换器</h3>
+      <h3 style="margin: 0 0 10px 0; color: #333;">ASCII Art Converter</h3>
       <p style="font-size: 0.85em; color: #777; line-height: 1.6;">上传任意图片，利用 Canvas 像素提取，瞬间将其转化为极客感爆棚的纯文本字符画。</p>
       <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #4caf50;"># 工具 # Canvas # 算法</div>
     </div>
   </a>
 
-</div> <style>
-  .item-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-color: #ff9800 !important;
-  }
-  .item-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #ff9800, #4caf50);
-  }
-</style>
+  <a href="/emoji/" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🧬</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Emoji Combiner</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">从不同类别中抽取 Emoji 进行脑洞大开的融合，诞生附带专属搞笑设定的全新宇宙奇葩生物。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #e91e63;"># JS # 脑洞</div>
+    </div>
+  </a>
+
+</div>
+
+<script>
+  (function() {
+    if (document.getElementById('groceries-final-style')) return;
+    const style = document.createElement('style');
+    style.id = 'groceries-final-style';
+    style.innerHTML = `
+      body .item-card {
+          position: relative;
+          border: 3px solid #f0f0f0 !important; 
+          background-color: #ffffff !important;
+          padding: 20px;
+          border-radius: 16px;
+          transition: transform 0.3s, box-shadow 0.3s, border-color 0.2s !important;
+          z-index: 1;
+          overflow: hidden !important;
+      }
+      body .item-card::before {
+          content: "";
+          position: absolute;
+          top: 0; left: 0; right: 0; height: 4px;
+          background: linear-gradient(90deg, #ff9800, #4caf50);
+          z-index: 10;
+          transition: opacity 0.3s;
+      }
+      
+      body .ai-card::before {
+          background: linear-gradient(90deg, #e91e63, #9c27b0);
+      }
+      @keyframes universalFlow {
+          0% { background-position: 0% 0%, 0% 0%; }
+          100% { background-position: 0% 0%, 200% 0%; }
+      }
+      @media (min-width: 769px) {
+          body .item-card:hover {
+              transform: translateY(-8px) !important;
+              box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+              border-color: transparent !important;
+              background-image: 
+                linear-gradient(#fff, #fff), 
+                linear-gradient(90deg, #ff0000, #ff9500, #ffcc00, #4cd964, #007aff, #5856d6, #ff0000) !important;
+              background-clip: padding-box, border-box !important;
+              background-origin: padding-box, border-box !important;
+              background-size: 100% 100%, 200% 100% !important;
+              animation: universalFlow 3s linear infinite !important;
+          }
+          body .item-card:hover::before { opacity: 0; }
+      }
+      @media (max-width: 768px) {
+          body .item-card {
+              border-color: transparent !important;
+              background-image: 
+                linear-gradient(#fff, #fff), 
+                linear-gradient(90deg, #ff0000, #ff9500, #ffcc00, #4cd964, #007aff, #5856d6, #ff0000) !important;
+              background-clip: padding-box, border-box !important;
+              background-origin: padding-box, border-box !important;
+              background-size: 100% 100%, 200% 100% !important;
+              animation: universalFlow 3s linear infinite !important;
+          }
+          body .item-card::before { display: none; }
+      }
+      body.dark-mode .item-card { background-color: #1e1e1e !important; border-color: #333 !important; }
+      body.dark-mode .item-card:hover, body.dark-mode .item-card {
+          background-image: 
+            linear-gradient(#1e1e1e, #1e1e1e), 
+            linear-gradient(90deg, #ff0000, #ff9500, #ffcc00, #4cd964, #007aff, #5856d6, #ff0000) !important;
+      }
+    `;
+    document.head.appendChild(style);
+  })();
+</script>
     </div>
     
     
