@@ -117,6 +117,16 @@
       margin-bottom: 10px;
     }
 
+    code {
+      display: none;
+      margin-top: 10px;
+      text-transform: none;
+      background-color: #fff;
+      padding: 2px 4px;
+      max-width: 400px;
+      text-align: left;
+    }
+
     .cell .emoji {
       width: 100%;
     }
@@ -255,6 +265,17 @@
     }
 
     .stat,
+    .link-to-github {
+      font-family: "Exo 2", sans-serif;
+    }
+
+    .link-to-github {
+      margin: 40px auto;
+      display: block;
+      font-size: 12px;
+      color: #08c;
+      text-decoration: none;
+    }
 
     .feedback {
       font-size: 1px;
@@ -277,7 +298,8 @@
         <label class="btn flex-cell" aria-label="Use Twitter Emoji"><input type="radio" name="emoji" id="twemoji">
           Twemoji</label>
         <label class="btn flex-cell" aria-label="Use Native Emoji"><input type="radio" name="emoji" id="emoji" checked>
-          Native emoji</label>
+          Native
+          emoji</label>
       </div>
       <div class="flex">
         <input id="cols" class="input flex-cell" type="number" value="10" min="1" max="500" aria-label="Columns">
@@ -319,6 +341,7 @@
     if (navigator.serviceWorker) navigator.serviceWorker.register('/emoji-minesweeper/sw.js')
   </script>
 
+  <!-- haiiii https://github.com/twitter/twemoji is awesome -->
   <script src="twemoji.js"></script>
   <script src="game.js"></script>
 
