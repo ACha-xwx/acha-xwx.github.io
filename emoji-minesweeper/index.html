@@ -150,13 +150,32 @@
       cursor: default;
     }
 
+    .wrapper {
+      padding: 10px;
+      position: relative;
+      -webkit-user-select: none;
+      user-select: none;
+      border-radius: 10px;
+      margin-top: 10px;
+      border: 5px solid #f4f4f4;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      box-sizing: border-box;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     #map {
       white-space: nowrap;
       overflow: auto;
-      max-width: 100%;
-      max-height: 55vh;
-      padding-bottom: 5px;
       -webkit-overflow-scrolling: touch;
+      flex: 1;
+      min-height: 200px;
+      padding-bottom: 5px;
     }
 
     #map::-webkit-scrollbar {
@@ -169,18 +188,11 @@
       border-radius: 4px;
     }
 
-    .wrapper {
-      padding: 10px;
-      position: relative;
-      -webkit-user-select: none;
-      user-select: none;
-      border-radius: 10px;
-      margin-top: 10px;
-      border: 5px solid #f4f4f4;
-      display: inline-block;
-      min-width: 250px;
-      max-width: 95%;
-      box-sizing: border-box;
+    .bar {
+      margin: 10px -10px -10px;
+      background-color: #f4f4f4;
+      border-radius: 0 0 5px 5px;
+      flex-shrink: 0;
     }
 
     .won .default-emoji,

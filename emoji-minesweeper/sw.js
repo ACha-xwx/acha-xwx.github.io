@@ -1,5 +1,5 @@
 var APP_PREFIX = 'EmojiMinesweeper'
-var VERSION = 'v1.0.0'
+var VERSION = '1.0.0'
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [
   '/emoji-minesweeper/',
