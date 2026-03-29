@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      Categories: 自我介绍 | 阿猹的小窝
+      Groceries Box 杂货箱 | 阿猹的小窝
     </title>
     <meta name="author" content="ACha_" />
     <meta name="description" content="欢迎来到阿猹的小窝！这里记录了我的音乐创作、编程学习和生活点滴。希望你能喜欢这里的内容，并且在这里找到有用的信息和灵感！如果你有任何问题或者建议，欢迎随时联系我！😉" />
@@ -44,6 +44,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://unpkg.com/twikoo@1.7.1/dist/twikoo.all.min.js"></script>
 
 
 
@@ -198,85 +204,257 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-          <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%9A%8F%E7%AC%94/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                随笔
-            </a>
+          <div class="article">
+    <div>
+        <h1>Groceries Box 杂货箱</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/9
         </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                更新说明
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                自我介绍
-            </a>
-        </span>
-        
-        
         
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2024/12/29</div>
-            <a href="/2024/12/29/%E9%98%BF%E7%8C%B9%E7%9A%84%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D-%E7%AC%AC%E4%B8%80%E7%AF%87%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/">
-                <h3>阿猹的自我介绍&amp;第一篇个人博客！</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        自我介绍
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="color: #00a596">
-                            自我介绍
-                        </a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>这里堆放着一些我亲手打磨的“小零碎”。 有些是用来消磨时间的，有些是用来解决问题的，它们都在这里闪闪发光。</p>
+<div class="view-toggle-container" style="display: flex; justify-content: flex-end; align-items: center; margin-top: 30px; gap: 10px;">
+  <span style="font-size: 0.85em; color: #777; font-weight: bold;">视图模式</span>
+  <button id="btn-grid" class="view-btn active" onclick="switchView('grid')" style="background:none; border:none; cursor:pointer; font-size:1.3rem; opacity:1; transition:0.3s; padding:0;" title="网格视图">🔲</button>
+  <button id="btn-list" class="view-btn" onclick="switchView('list')" style="background:none; border:none; cursor:pointer; font-size:1.3rem; opacity:0.4; transition:0.3s; padding:0;" title="列表视图">📄</button>
+</div>
+
+<div class="groceries-grid" id="groceries-box">
+  <a href="/dino/index.html" style="text-decoration: none; color: inherit;">
+    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🦖</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Dino Run</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">一个基于HTML，十分经典的恐龙快跑小游戏。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #ff9800;"># HTML # 游戏</div>
     </div>
+  </a>
+
+  <a href="/balloon/" style="text-decoration: none; color: inherit;">
+    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🎈</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Hot Air Balloon</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">一个复刻 Google Play 专属断网小彩蛋的小程序。拖动气球，躲避尖刺平台。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #607d8b;"># HTML # HTML5 Canvas # 游戏</div>
+    </div>
+  </a>
+
+  <a href="https://mail.acha.xx.kg" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">📮</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">ACha_'s Post Office | 猹の邮局</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">基于 CF Workers + D1 SQL 数据库 + R2 对象存储 搭建，从此拥有了以自己名字命名的邮箱。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #4caf50;"># JavaScript # Vue # 工具 # Serverless</div>
+    </div>
+  </a>
+
+  <a href="/ascii/" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🔣</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">ASCII Art Converter</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">上传任意图片，利用 Canvas 像素提取，瞬间将其转化为极客感爆棚的纯文本字符画。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #4caf50;"># Canvas # 算法 # 工具</div>
+    </div>
+  </a>
+
+  <a href="/emoji/" style="text-decoration: none; color: inherit;">
+    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🧬</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Emoji Combiner</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">从不同类别中抽取 Emoji 进行脑洞大开的融合，诞生附带专属搞笑设定的全新宇宙奇葩生物。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #e91e63;"># JavaScript # 脑洞 # Cloudflare Workers AI</div>
+    </div>
+  </a>
+
+  <a href="https://pdf.acha.xx.kg/zh" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">📝</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">PDFCraft</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">一个强大的本地 PDF 处理工具箱。支持自由添加高亮、注释以及电子签名等近百项功能。最重要的是……它完全免费！</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #2196f3;"># JavaScript # WebAssembly # 工具</div>
+    </div>
+  </a>
+
+  <a href="/minesweeper/" style="text-decoration: none; color: inherit;">
+    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">💣</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Emoji Minesweeper</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">由表情包构成的扫雷小游戏💣！考验运气的摸🐟神器，一旦开始了就根本停不下来！（迫真）</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #f44336;"># HTML # JavaScript # 游戏 # Emoji😉</div>
+    </div>
+  </a>
+
+<a href="https://pan.acha.xx.kg" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">☁️</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">ACha_'s Cloud Drive | 猹の云盘</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">我的私人云端空间。5TB 容积，支持 WebDAV 直连，简单、纯净、管够!</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #2196f3;"># Cloudreve # OneDrive # Microsoft Azure # 工具</div>
+    </div>
+  </a>
+
+<a href="/arcade/" style="text-decoration: none; color: inherit;">
+    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🕹️</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Cyber Arcade</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">完美收录并极致分类整理了 1653 款 FC/SFC 经典游戏的 Cyber 街机厅🕹️！支持精准标签检索与丝滑的双模切换，属于你的私人怀旧游戏库！</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #0078E7;"># EmulatorJS # JavaScript # 怀旧游戏 # 街机👾</div>
+    </div>
+  </a>
+
+<a href="https://it-tool.acha.xx.kg" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🧰</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">IT Tools</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">专为开发人员打造的在线工具箱。界面清爽、完全免费，汇集了 Token 生成、Hash 加密、Base64 编解码等几十种超实用的日常开发小工具。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #009688;"># Vue.js # Dev Tools # 工具箱🪛</div>
+    </div>
+  </a>
+
+<a href="https://abra.acha.xx.kg" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">📜</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Abracadabra 魔曰</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">一款兼具趣味性与安全性的文本加密工具。采用 AES-256 算法，能将任意大白话明文加密成引经据典的仿真古文段落。优雅的赛博加密通话，极致的防偷窥神器！</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #9c27b0;"># Vue # AES-256 # 加密工具 # 古风🪭🏮</div>
+    </div>
+  </a>
+
+<a href="https://poke.acha.xx.kg" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🔴</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">PokéRogue</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">一款融合了宝可梦与 Roguelite 元素的在线小游戏！无需跑图做任务，开局直接选宠闯关。打怪、掉宝、升级你的宝可梦阵容，不断探索并挑战更强的训练师与 Boss！</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #E3350D;"># TypeScript # Roguelite # 宝可梦 # 游戏👾</div>
+    </div>
+  </a>
+
+<script>
+  (function() {
+    if (document.getElementById('groceries-final-style')) return;
+    const style = document.createElement('style');
+    style.id = 'groceries-final-style';
+    style.innerHTML = `
+      .groceries-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 20px;
+          margin-top: 15px;
+      }
+      body .item-card {
+          position: relative;
+          border: 3px solid #f0f0f0 !important; 
+          background-color: #ffffff !important;
+          padding: 20px;
+          border-radius: 16px;
+          transition: transform 0.3s, box-shadow 0.3s, border-color 0.2s !important;
+          z-index: 1;
+          overflow: hidden !important;
+          height: 100%;
+          box-sizing: border-box;
+      }
+      body .item-card::before {
+          content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+          background: linear-gradient(90deg, #ff9800, #4caf50);
+          z-index: 10; transition: opacity 0.3s;
+      }
+      body .ai-card::before { background: linear-gradient(90deg, #e91e63, #9c27b0); }
+      
+      @keyframes universalFlow {
+          0% { background-position: 0% 0%, 0% 0%; }
+          100% { background-position: 0% 0%, 200% 0%; }
+      }
+      @media (min-width: 769px) {
+          body .item-card:hover {
+              transform: translateY(-8px) !important;
+              box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+              border-color: transparent !important;
+              background-image: linear-gradient(#fff, #fff), linear-gradient(90deg, #ff0000, #ff9500, #ffcc00, #4cd964, #007aff, #5856d6, #ff0000) !important;
+              background-clip: padding-box, border-box !important;
+              background-origin: padding-box, border-box !important;
+              background-size: 100% 100%, 200% 100% !important;
+              animation: universalFlow 3s linear infinite !important;
+          }
+          body .item-card:hover::before { opacity: 0; }
+      }
+      
+      body.dark-mode .item-card { background-color: #1e1e1e !important; border-color: #333 !important; }
+      body.dark-mode .item-card:hover, body.dark-mode .item-card.list-mode {
+          background-image: linear-gradient(#1e1e1e, #1e1e1e), linear-gradient(90deg, #ff0000, #ff9500, #ffcc00, #4cd964, #007aff, #5856d6, #ff0000) !important;
+      }
+      .groceries-grid.list-mode {
+          grid-template-columns: 1fr;
+      }
+      .groceries-grid.list-mode .item-card {
+          display: grid;
+          grid-template-columns: 80px 1fr;
+          grid-template-rows: auto auto auto;
+          align-items: center;
+          padding: 15px 25px !important;
+      }
+      .groceries-grid.list-mode .item-card > div:first-child {
+          grid-column: 1; grid-row: 1 / 4;
+          margin-bottom: 0 !important;
+          font-size: 3rem !important;
+          display: flex; align-items: center; justify-content: flex-start;
+      }
+      .groceries-grid.list-mode .item-card > h3 {
+          grid-column: 2; grid-row: 1; margin: 0 0 5px 0 !important; font-size: 1.2rem;
+      }
+      .groceries-grid.list-mode .item-card > p {
+          grid-column: 2; grid-row: 2; margin: 0 0 8px 0 !important;
+      }
+      .groceries-grid.list-mode .item-card > div:last-child {
+          grid-column: 2; grid-row: 3; margin-top: 0 !important;
+      }
+
+      .view-btn:hover { transform: scale(1.1); opacity: 0.8 !important; }
+    `;
+    document.head.appendChild(style);
+  })();
+
+  function switchView(mode) {
+      const grid = document.getElementById('groceries-box');
+      const btnGrid = document.getElementById('btn-grid');
+      const btnList = document.getElementById('btn-list');
+
+      if (!grid || !btnGrid || !btnList) return;
+
+      if (mode === 'list') {
+          grid.classList.add('list-mode');
+          btnList.style.opacity = '1';
+          btnGrid.style.opacity = '0.4';
+          localStorage.setItem('achaGroceriesView', 'list');
+      } else {
+          grid.classList.remove('list-mode');
+          btnGrid.style.opacity = '1';
+          btnList.style.opacity = '0.4';
+          localStorage.setItem('achaGroceriesView', 'grid');
+      }
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+      const savedView = localStorage.getItem('achaGroceriesView') || 'grid';
+      switchView(savedView);
+  });
+</script>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -316,6 +494,22 @@
     </div>
     <script src="/js/main.js"></script>
     
+      
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://comment.acha.xx.kg",
+        region: "",
+        path: location.pathname,
+        lang: "zh-CN",
+    })
+</script>
+
+
+        
           <div id="dashboard-toggle" onclick="toggleDashboard()">
             <span id="toggle-icon" style="transition: transform 0.3s ease; display: inline-block;">🎵</span>
           </div>
