@@ -351,6 +351,24 @@
     </div>
   </a>
 
+<a href="https://draw.acha.xx.kg" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card ai-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">🎨</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Excalidraw CN</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">一款极具惊艳手绘风格的虚拟白板。让你在梳理架构、绘制流程图或头脑风暴时，找回最纯粹的马克笔涂鸦自由感。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #673AB7;"># React # 思维导图 # 效率白板✏️</div>
+    </div>
+</a>
+
+<a href="https://pika.acha.xx.kg" target="_blank" style="text-decoration: none; color: inherit;">
+    <div class="item-card" style="border: 1px solid #e0e0e0; border-radius: 15px; padding: 20px; background: #fff; transition: all 0.3s cubic-bezier(.25,.8,.25,1); position: relative; overflow: hidden; cursor: pointer;">
+      <div style="font-size: 2rem; margin-bottom: 10px;">⚡</div>
+      <h3 style="margin: 0 0 10px 0; color: #333;">Pikachu Volleyball</h3>
+      <p style="font-size: 0.85em; color: #777; line-height: 1.6;">100% 还原的童年神作！作者通过硬核的逆向工程破解了1997年原版Windows机器代码，并用前端技术完美重制。随时随地打开网页，重温纯粹的快乐。</p>
+      <div style="margin-top: 15px; font-size: 0.8em; font-weight: bold; color: #FF9800;"># JavaScript # 逆向工程 # 怀旧游戏🏐</div>
+    </div>
+</a>
+
 <script>
   (function() {
     if (document.getElementById('groceries-final-style')) return;
@@ -375,7 +393,7 @@
           z-index: 10; transition: opacity 0.3s;
       }
       body .ai-card::before { background: linear-gradient(90deg, #e91e63, #9c27b0); }
-      
+
       @keyframes universalFlow {
           0% { background-position: 0% 0%, 0% 0%; }
           100% { background-position: 0% 0%, 200% 0%; }
@@ -450,7 +468,7 @@
           if (filterVal === 'game') return !isTool;
           return true; // value === 'all'
       });
-
+    
       filteredCards.sort((a, b) => {
           if (sortVal === 'default') {
               return originalCards.indexOf(a) - originalCards.indexOf(b);
@@ -460,7 +478,7 @@
           const nameB = b.querySelector('h3').innerText.toLowerCase();
           const tagsA = a.querySelector('div:last-child').innerText.toLowerCase();
           const tagsB = b.querySelector('div:last-child').innerText.toLowerCase();
-
+    
           if (sortVal === 'name-asc') return nameA.localeCompare(nameB);
           if (sortVal === 'name-desc') return nameB.localeCompare(nameA);
           if (sortVal === 'tag-asc') return tagsA.localeCompare(tagsB);
