@@ -780,7 +780,7 @@
 
 <body>
   <div class="shell">
-    <section id="intro" class="screen">
+    <section id="intro" class="screen active">
       <div class="hero card hero-minimal">
         <h1>MBTI已经过时，SBTI来了。</h1>
         <div class="hero-actions hero-actions-single">
@@ -798,7 +798,7 @@
       </div>
     </section>
 
-    <section id="test" class="screen active">
+    <section id="test" class="screen">
       <div class="test-wrap card">
         <div class="topbar">
           <div class="progress"><span id="progressBar" style="width: 0%;"></span></div>
@@ -2482,9 +2482,8 @@
 
     function getVisibleQuestions() {
       const visible = [...app.shuffledQuestions];
-      const gateIndex = visible.findIndex(q => q.id === 'drink_gate_q1');
-      if (gateIndex !== -1 && app.answers['drink_gate_q1'] === 3) {
-        visible.splice(gateIndex + 1, 0, specialQuestions[1]);
+      if (app.answers['drink_gate_q1'] === 3) {
+        visible.push(specialQuestions[1]);
       }
       return visible;
     }
@@ -2552,6 +2551,10 @@
       progressText.textContent = `${done} / ${total}`;
       const complete = done === total && total > 0;
       submitBtn.disabled = !complete;
+      if (!complete && app.answers['drink_gate_q1'] === 3 && app.answers['drink_gate_q2'] === undefined) {
+        testHint.textContent = '你选择了“饮酒”，系统追加了第 32 题补充题。继续做完最后一题后才能提交。';
+        return;
+      }
       testHint.textContent = complete
         ? '都做完了。现在可以把你的电子魂魄交给结果页审判。'
         : '全选完才会放行。世界已经够乱了，起码把题做完整。';
@@ -2714,6 +2717,7 @@
     document.getElementById('submitBtn').addEventListener('click', renderResult);
     document.getElementById('restartBtn').addEventListener('click', () => startTest(false));
     document.getElementById('toTopBtn').addEventListener('click', () => showScreen('intro'));
+    showScreen('intro');
   </script>
 
   <!-- Cloudflare Pages Analytics -->
