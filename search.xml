@@ -38,6 +38,47 @@ Twikoo 使用了免费的MongoDB数据库，然后在 Vercel 上云端部署了 
   </entry>
   <entry>
     <title>更新说明</title>
+    <url>/2026/03/11/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%202026.3.11/</url>
+    <content><![CDATA[2026.3.11 更新说明
+
+
+
+
+
+
+添加了 Groceries Box 里的 ASCII Art Converter 板块 (就是一个图片转 ASCII 字符画的小工具)。
+排版了 Groceries Box 的卡片样式。
+添加了 Groceries Box 里的 Emoji Combiner 板块，使用 Cloudflare Workers AI，调用模型 llama-4-scout-17b-16e-instruct ，通过 Cloudflare Workers 完成前后端对接。
+添加了 ASCII Art Converter 的 “切换显示底色” 功能，添加了一键复制生成结果的功能。
+添加了 Emoji Combiner 的表情选择数量，修改了表情显示的排列方式。
+修改了 ASCII Art Converter 的输出结果显示逻辑，修复了由于图片过大而导致无法完整显示输出结果的 Bug。
+由于 Cloudflare Workers AI在国内无法访问，Emoji Combiner 的输出结果无法显示，将 Emoji Combiner 本体移植到 Vercel 进行云端部署，借用 Vercel 的加速节点来实现访问 Cloudflare Workers AI。
+添加了 Groceries Box 卡片的边框特效样式。
+添加了 ASCII Art Converter 和 Emoji Combiner 的手机端适配。
+添加了 Groceries Box 里的 PDF Craft （https://github.com/PDFCraftTool/pdfcraft）这个开源 PDF 在线编辑器，将其部署到 Vercel 进行快速访问。
+修改了文章《收拾，整理，以及翻新…》里引用 GitHub 项目链接错误的问题。
+修改了一些文章和杂货箱卡片的 Tag。
+]]></content>
+      <categories>
+        <category>更新说明</category>
+      </categories>
+      <tags>
+        <tag>更新说明</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新年快乐！！</title>
+    <url>/2024/12/31/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90%EF%BC%81%EF%BC%81/</url>
+    <content><![CDATA[新年快乐！！！
+
+马上就到2025年了，是阿猹的高考年，也会是阿猹重新正式开始写歌的一年！
+春节可能会有新歌噢！
+阿猹提前祝大家，在新的一年里，每天开心，吃饱饱穿暖暖，做一个可爱的人！
+新年快乐鸭！~
+]]></content>
+  </entry>
+  <entry>
+    <title>更新说明</title>
     <url>/2026/03/29/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%202026.3.29/</url>
     <content><![CDATA[2026.3.29 更新说明
 
@@ -63,17 +104,6 @@ Twikoo 使用了免费的MongoDB数据库，然后在 Vercel 上云端部署了 
       <tags>
         <tag>更新说明</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>新年快乐！！</title>
-    <url>/2024/12/31/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90%EF%BC%81%EF%BC%81/</url>
-    <content><![CDATA[新年快乐！！！
-
-马上就到2025年了，是阿猹的高考年，也会是阿猹重新正式开始写歌的一年！
-春节可能会有新歌噢！
-阿猹提前祝大家，在新的一年里，每天开心，吃饱饱穿暖暖，做一个可爱的人！
-新年快乐鸭！~
-]]></content>
   </entry>
   <entry>
     <title>阿猹的自我介绍&amp;第一篇个人博客！</title>
@@ -143,36 +173,6 @@ Midtempo, Botanica, Drum ‘n Bass, UK Hardcore
       </categories>
       <tags>
         <tag>自我介绍</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>更新说明</title>
-    <url>/2026/03/11/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%202026.3.11/</url>
-    <content><![CDATA[2026.3.11 更新说明
-
-
-
-
-
-
-添加了 Groceries Box 里的 ASCII Art Converter 板块 (就是一个图片转 ASCII 字符画的小工具)。
-排版了 Groceries Box 的卡片样式。
-添加了 Groceries Box 里的 Emoji Combiner 板块，使用 Cloudflare Workers AI，调用模型 llama-4-scout-17b-16e-instruct ，通过 Cloudflare Workers 完成前后端对接。
-添加了 ASCII Art Converter 的 “切换显示底色” 功能，添加了一键复制生成结果的功能。
-添加了 Emoji Combiner 的表情选择数量，修改了表情显示的排列方式。
-修改了 ASCII Art Converter 的输出结果显示逻辑，修复了由于图片过大而导致无法完整显示输出结果的 Bug。
-由于 Cloudflare Workers AI在国内无法访问，Emoji Combiner 的输出结果无法显示，将 Emoji Combiner 本体移植到 Vercel 进行云端部署，借用 Vercel 的加速节点来实现访问 Cloudflare Workers AI。
-添加了 Groceries Box 卡片的边框特效样式。
-添加了 ASCII Art Converter 和 Emoji Combiner 的手机端适配。
-添加了 Groceries Box 里的 PDF Craft （https://github.com/PDFCraftTool/pdfcraft）这个开源 PDF 在线编辑器，将其部署到 Vercel 进行快速访问。
-修改了文章《收拾，整理，以及翻新…》里引用 GitHub 项目链接错误的问题。
-修改了一些文章和杂货箱卡片的 Tag。
-]]></content>
-      <categories>
-        <category>更新说明</category>
-      </categories>
-      <tags>
-        <tag>更新说明</tag>
       </tags>
   </entry>
 </search>
