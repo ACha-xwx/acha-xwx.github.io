@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+  <!DOCTYPE html>
+  <html lang="zh-CN">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      我有一个特别好的女朋友 | 阿猹的小窝
+    </title>
+    <meta name="author" content="ACha_" />
+    <meta name="description" content="欢迎来到阿猹的小窝！这里记录了我的音乐创作、编程学习和生活点滴。希望你能喜欢这里的内容，并且在这里找到有用的信息和灵感！如果你有任何问题或者建议，欢迎随时联系我！😉" />
+    <meta name="keywords" content="阿猹的小窝, 个人主页, 音乐人, 程序员, 博客" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+<script src="https://unpkg.com/twikoo@1.7.1/dist/twikoo.all.min.js"></script>
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="阿猹的小窝" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="阿猹的小窝" type="application/rss+xml">
+</head>
+
+  <body>
+    <div id="layout">
+      <transition name="fade">
+        <div id="loading" v-show="loading">
+          <div id="loading-circle">
+            <h2>LOADING</h2>
+            <p>加载中...</p>
+            <img src="/images/cat.gif" />
+          </div>
+        </div>
+      </transition>
+      <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>阿猹的小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/groceries">
+            <i class="fa-solid fa-box-open fa-fw"></i>
+            <span>&ensp;Groceries Box</span>
+        </a>
+        
+        <a href="/friends">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Friend Links</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://write.acha.xx.kg">
+            <i class="fa-solid fa-feather-pointed fa-fw"></i>
+            <span>&ensp;Write!</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;阿猹的小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/groceries">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-open fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Groceries Box</div>
+                    </div>
+                </a>
+                
+                <a href="/friends">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Friend Links</div>
+                    </div>
+                </a>
+                
+                <a target="_blank" rel="noopener" href="https://write.acha.xx.kg">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-feather-pointed fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Write!</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+          <div class="article">
+    <div>
+        <h1>我有一个特别好的女朋友</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/16
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%9A%8F%E7%AC%94/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                随笔
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%81%8B%E7%88%B1/" style="color: #ffa2c4">
+                    恋爱
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%B0%8F%E7%8C%AA%E5%AE%9D%E5%AE%9D/" style="color: #00a596">
+                    小猪宝宝
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%97%A5%E5%B8%B8/" style="color: #00bcd4">
+                    日常
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>我有一个特别好的女朋友。</p>
+<p>这句话最近总在我心里反复出现。不是为了证明什么，也不是想把感情说得多么轰轰烈烈，只是每当我想到她，想到我们这段时间发生过的事情，想到那些聊天、见面、牵手、互相惦记的日子，我都会很确定地觉得：她真的很好，而我真的很爱她。</p>
+<p>这篇文章就是想把这件事认真写下来。</p>
+<p>写给来到这个博客的人看，也写给以后回头翻到这篇文章的自己看。让我记得，在 2026 年 5 月的这些日子里，有一个人突然很具体、很柔软、也很坚定地住进了我的生活。她不是一个抽象的“女朋友”身份，不是几句好听的话能概括的人，而是一个有课要上、有作业要写、会累、会饿、会害羞、会纠结、会把日常小事一件件讲给我听的人。</p>
+<p>也是我总想随时随地陪在身边的人。</p>
+<p>我以前以为，爱一个人也许要等到很大的瞬间才会被确认。比如一次很正式的告白，一场很漂亮的约会，或者某个足够适合被写进纪念册的场景。后来真的爱上她以后，我才发现不是这样。</p>
+<p>更多时候，爱是在一些很细的地方突然浮出来的。是看到她说自己没吃早饭时那一下心疼，是她很晚还在赶作业时那种想陪她熬完的念头，是她说身体不舒服时我没办法真正放心，也是我明明在做自己的事，却总会分出一小块心思去想她现在怎么样。</p>
+<p>这些感觉没有多么夸张，却一直都在。</p>
+<p>它们让我越来越依恋她，也让我越来越想靠近她。</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="两个校区之间的距离"><a href="#两个校区之间的距离" class="headerlink" title="两个校区之间的距离"></a>两个校区之间的距离</h2><p>我和她不在一个学校。</p>
+<p>我在西北工业大学长安校区，她在西安交通大学兴庆校区。两个校区隔得不算近，直线距离大概三十多公里。放在地图上，它只是一段距离；放到两个人身上，就变成了地铁、公交、出站口、等候、接站，还有很多次对路线和时间的确认。</p>
+<p>以前我看地图，只会关心从一个点到另一个点要多久。现在不一样了。因为她，很多普通的地名都有了情绪。西安南站不再只是西安南站，地铁口也不再只是地铁口。它们都和某一次见面、某一次等待、某一次靠近连在一起。</p>
+<p>有时候我会觉得很奇妙。</p>
+<p>喜欢一个人以后，距离好像不再只是让人烦躁的东西。它当然会让人想念，会让人恨不得立刻把两边的路缩短，可它也让每一次见面都变得很珍贵。因为要见到她，需要提前看时间，需要确认路线，需要在路上花掉一段不短的时间。于是当她真的出现在面前的时候，那一刻就会比普通的“见一面”更重一点。</p>
+<p>我很喜欢等她。</p>
+<p>等她回消息，等她下课，等她从忙碌里抽出一点时间，等她从地铁口出来，等她走到我身边。等待本来应该是焦躁的，可如果等到最后能看到她，我就会觉得连等待本身也变甜了。</p>
+<p>这段距离也让我更清楚地知道，我有多想陪她。</p>
+<p>因为不是想见就能立刻见到，所以每一次错过都会被放大。她说累的时候，我知道自己不能马上出现在她身边；她说不舒服的时候，我也只能先隔着手机着急。正是这些“不在场”的时刻，让我更想把以后每一次能在场的机会都抓紧。</p>
+<p>我想把两所学校之间的距离走成习惯。</p>
+<p>走到后来，路线不再需要反复确认，站口不再陌生，等待也不再慌张。走到她知道，只要我能去，我就会去；只要她需要，我就会尽量靠近。</p>
+<h2 id="她进入了我的一天"><a href="#她进入了我的一天" class="headerlink" title="她进入了我的一天"></a>她进入了我的一天</h2><p>一个人真正进入生活，常常不是从某句很重的话开始的。</p>
+<p>她是慢慢进来的。</p>
+<p>先是聊天变多，然后是我开始等她的消息。再后来，我开始自然地记住她的课表、作息、身体状态和那些容易被别人忽略的小事。她今天有没有早课，晚上有没有排练，什么时候要给小朋友讲课，最近是不是又胃口不好，宿舍里方不方便打电话，这些原本和我无关的事情，后来都变成了我会放在心上的事情。</p>
+<p>我并不觉得这是一种负担。</p>
+<p>恰恰相反，我很喜欢这种被她牵动的感觉。她的一天会影响我的一天。她开心，我会跟着轻快；她难受，我会放心不下；她忙完来找我，我会觉得那一刻像是被奖励了一样。</p>
+<p>这种依恋很温柔，也很明显。</p>
+<p>它不吵，也不一定每次都说出口，但它会出现在很多细节里。比如我会下意识看手机，会想她有没有安全到宿舍，会想她有没有又把饭拖到很晚，会想她如果现在就在我旁边，我们会不会一起去买点吃的，或者什么都不做，只是安静待一会儿。</p>
+<p>她进入我的生活以后，很多普通时间都不再是空白的。</p>
+<p>它们变成了想她的时间。</p>
+<h2 id="她把日常变得很重要"><a href="#她把日常变得很重要" class="headerlink" title="她把日常变得很重要"></a>她把日常变得很重要</h2><p>她不是那种只在大事件里出现的人。</p>
+<p>事实上，我们之间最常出现的，反而都是很日常的小事。上课、作业、外卖、奶茶、快递、手机壳、宿舍、朋友起哄、胃不舒服、嘴里起泡、排练通知、晚上给小朋友讲课、高数期中、化学作业，还有电脑里一些奇奇怪怪的小问题。</p>
+<p>这些事情如果写成清单，看起来一点也不像传统意义上的爱情故事。</p>
+<p>可我越来越觉得，真正让人陷进去的，恰恰就是这些细节。</p>
+<p>她早上没吃饭去上课，我会忍不住担心；她说胃不舒服，我会想她是不是又在硬撑；她因为作业没写完熬夜，我会想陪她把那一点点事情收完；她查到高数期中成绩以后难过，我会很想把她从那种泄气里抱出来。她说今天不想吃饭，我会记着这件事；她说要去拿快递，我会等她回来；她晚上要给小孩讲课，我会记住七点到九点这段时间。</p>
+<p>这不是刻意的。</p>
+<p>爱一个人以后，关心会自己长出来。</p>
+<p>我会开始记得她今天有没有吃饭，今天课多不多，宿舍里方不方便说话，身体有没有不舒服，朋友有没有又在旁边起哄。也会开始在一些很小的空隙里想到她：如果她现在在我身边就好了，如果我能陪她去吃饭就好了，如果她不舒服的时候我能直接出现在她面前就好了。</p>
+<p>这种想陪在她身边的念头，经常来得很突然，也很具体。</p>
+<p>不是泛泛地想“我想见她”，而是想在她从教室出来的时候站在那里，想在她下楼拿外卖的时候陪她一起走，想在她胃不舒服的时候把药递到她手里，想在她因为作业和成绩难受的时候坐在她旁边，想让她不用每一次都隔着屏幕被安慰。</p>
+<p>我想她抬头就能看见我。</p>
+<p>我也想让她知道，有一个人真的会把她这些小事当成大事。</p>
+<p>不是因为这些事情本身有多严重，而是因为发生在她身上。她的一顿饭、一次晚睡、一点不舒服、一段回宿舍的路，对我来说都不是随口听过就算了的东西。爱会让人变得很认真，认真到连这些细枝末节都不想漏掉。</p>
+<p>我想把她照顾得再好一点。</p>
+<p>不是替她安排所有事情，也不是让她失去自己的节奏，而是在她累的时候帮她分一点，在她乱的时候陪她理一点，在她不想说话的时候也能安静地陪着。她可以继续有自己的生活，而我想成为她生活里一个稳定、温柔、随时可以回头看见的位置。</p>
+<h2 id="第一次牵手"><a href="#第一次牵手" class="headerlink" title="第一次牵手"></a>第一次牵手</h2><p>第一次正式见面，是在我学校。</p>
+<p>见面之前，我们已经聊过很多很多话。聊天的时候很熟悉，真的要见面时却还是会紧张。因为那不再是一条消息、一个头像、一个语音，而是她真的要来到我面前。一个原本在屏幕那边的人，突然有了温度，有了脚步，有了可以并肩走路的距离。</p>
+<p>那天我们吃了东西，在校园里走，拍了照片，也经历了很多很小的插曲。现在回头想，很多细节都很清楚。她在我身边走路的样子，她确认路线时的样子，我们一起找东西的样子，还有我心里那种“她真的来了”的感觉。</p>
+<p>我很喜欢这张照片。</p>
+<p><img src="/images/xiaozhu-2026/first-meeting-nwpu-hand.jpg" alt="第一次见面的牵手照"></p>
+<p>它没有拍到完整的人，也没有什么华丽的背景。可是对我来说，它把那天最重要的东西留下来了。</p>
+<p>两只手牵在一起。</p>
+<p>她从西交兴庆来到西工大长安，从聊天框来到我的身边。那一刻，三十多公里的距离被压缩成了掌心里的温度。很多话不需要说出来，手指扣在一起，就已经足够说明很多事情。</p>
+<p>牵手是一件很简单的事。</p>
+<p>可我到现在都觉得它很珍贵。因为牵住她的时候，我会有一种很强的安定感。她在身边，不是想象，不是等待，不是手机里的消息，而是真实地和我站在同一个地方。那种感觉会让人想把时间放慢一点，再放慢一点。</p>
+<p>如果可以，我想一直牵着她。</p>
+<p>想陪她走过学校里的路，走过地铁站，走过很多个周末，走过以后那些还没有发生的日子。想在她累的时候让她靠近一点，想在她不安的时候握紧一点，想让她知道，只要她愿意，我会一直站在她这边。</p>
+<p>那天以后，“见过她”这件事本身就变成了一种很深的想念。</p>
+<p>没见面的时候，她在我的想象里已经很清楚；见过以后，她就更清楚了。聊天时我会想起她真实的表情，想起她走在我旁边的样子，想起牵手时掌心的温度。于是想念不再只是对一个头像的想念，而是对一个真实的人、一个真实瞬间、一个真实怀抱的想念。</p>
+<p>这也是为什么我总想再见她。</p>
+<p>不是因为聊天不够好，而是因为见面会让爱变得更踏实。看见她，牵到她，陪她走一段路，哪怕什么重要的话都没说，我也会觉得心里有一块地方安稳下来了。</p>
+<h2 id="我爱的不是一个完美的人"><a href="#我爱的不是一个完美的人" class="headerlink" title="我爱的不是一个完美的人"></a>我爱的不是一个完美的人</h2><p>我很爱她，但这种爱不是把她想象成一个永远轻松、永远明亮、永远不会出错的人。</p>
+<p>我爱的就是她真实的样子。</p>
+<p>她会开心，也会疲惫；会害羞，也会想很多；会突然很可爱，也会因为一些事陷进情绪里。她有时候不想吃饭，有时候作业很多，有时候被朋友起哄到不知道怎么回应，有时候明明很累还要去上课、排练、讲课。她不是被修饰出来的完美女主角，她是一个真正在生活里忙碌着、努力着、感受着的人。</p>
+<p>也正因为这样，我才会越来越想陪着她。</p>
+<p>我想参与她很好的时刻，也想参与她没那么好的时刻。想看她开心地讲一件小事，也想听她难过的时候慢慢说。想陪她挑手机壳、看抽象视频、选奶茶，也想陪她面对作业、考试、身体不舒服和那些说不清的委屈。</p>
+<p>爱她，不是只想收藏她可爱的样子。</p>
+<p>爱她是想接住完整的她。</p>
+<p>她不用在我这里一直表现得很好，不用每一次都说“没事”，不用把所有情绪整理清楚了才来找我。她可以累，可以烦，可以不安，可以说自己不想上课、不想吃饭、不知道怎么办。她可以把那些不那么漂亮、不那么有条理的心情也放过来。</p>
+<p>我会很愿意听。</p>
+<p>更准确地说，我很想听。</p>
+<p>因为那些情绪也是她的一部分。一个人愿意把真实的自己交给另一个人，本来就是很难得的信任。我很珍惜这种信任，也很想让她知道，她不需要因为被爱就变成一个更省心的人。</p>
+<p>她只要继续做她自己就好了。</p>
+<p>我会继续爱她。</p>
+<p>而且我越了解她，越会觉得她值得被好好爱着。</p>
+<p>她有很柔软的一面，也有很认真生活的一面。她会因为朋友的事想很多，会被宿舍里的热闹弄得害羞，会在不舒服的时候还惦记着要把事情做完。她也会有一些很可爱的突然转弯，上一秒还在说作业和课程，下一秒话题就跑到手机壳、奶茶、视频或者一些很奇怪的小东西上。</p>
+<p>我喜欢她这种鲜活。</p>
+<p>她不是一张被摆好的照片，也不是一个只负责让人心动的符号。她是会在生活里移动、犹豫、开心、疲惫、努力、撒娇的人。也正因为她这么真实，我对她的爱才不是飘着的。它会落下来，落到每一次想照顾她、想陪她、想让她安心的冲动里。</p>
+<h2 id="想随时随地陪在她身边"><a href="#想随时随地陪在她身边" class="headerlink" title="想随时随地陪在她身边"></a>想随时随地陪在她身边</h2><p>如果要说这段时间里我最明显的感受，大概就是：我总是想陪在她身边。</p>
+<p>这种陪伴欲很强。强到有时候她只是说了一句自己没吃饭，我就会想如果我在就好了；她只是说身体不舒服，我就会开始想我能不能立刻买药过去；她只是说今天很累，我就会想陪她坐一会儿，哪怕什么都不说也好。</p>
+<p>隔着屏幕当然也可以安慰人。</p>
+<p>可以发消息，可以打电话，可以说“我在”。可我还是常常觉得不够。因为真正爱一个人以后，会很自然地想靠近她。想看见她的表情，想听见她真实的声音，想知道她说“没事”的时候到底有没有事，想在她需要的时候不是只打出几个字，而是直接把她抱住。</p>
+<p>我想在她下课的时候陪她。</p>
+<p>想在她去吃饭的时候陪她。</p>
+<p>想在她回宿舍的路上陪她。</p>
+<p>想在她排练完、讲完课、写完作业、终于能松一口气的时候陪她。</p>
+<p>也想在她什么都不做的时候陪她。两个人可以只是坐着，可以各自做自己的事，可以偶尔说两句话。只要她在旁边，我就会觉得很安心。</p>
+<p>我并不觉得陪伴一定要很热闹。</p>
+<p>有时候最让我向往的，反而是很普通的场景。她在旁边写作业，我在旁边做自己的事；她困了，我让她早点睡；她想喝奶茶，我们一起选口味；她要去拿快递，我陪她下楼；她遇到电脑问题，我帮她慢慢弄。这样的日子没有多么戏剧化，但我会很喜欢。</p>
+<p>因为我想要的不是短暂的浪漫，而是长久地待在她生活里。</p>
+<p>这种“想待在她生活里”的感觉，和单纯想见面还不太一样。</p>
+<p>想见面是想靠近她，想待在她生活里则是想陪她经过那些不一定好看、不一定适合拍照、但真实发生的时间。比如赶早课的早上，写作业写到有点崩溃的晚上，排练和上课挤在一起的那天，身体不舒服还要继续忙的时候，朋友在旁边起哄导致她不太好意思说话的时候。</p>
+<p>我不想只站在她生活最轻松的地方。</p>
+<p>我也想站在那些她会觉得累、觉得烦、觉得不知道怎么办的地方。不是为了替她解决所有问题，而是想让她在面对这些事情的时候，不会觉得自己只有一个人。</p>
+<p>我希望她能习惯被我陪着。</p>
+<p>习惯在开心的时候分享给我，习惯在不开心的时候也可以找我，习惯不必每次都把自己整理好了才出现。她可以以任何状态来到我这里，而我都会很认真地接住她。</p>
+<p>这大概就是我理解的依恋。</p>
+<p>不是把两个人绑得喘不过气，而是心里一直有一个方向。无论我在做什么，无论她在忙什么，我都会自然地朝她那里偏一点。想知道她好不好，想让她好一点，也想让她知道，她一直被人放在心上。</p>
+<h2 id="路上的那张照片"><a href="#路上的那张照片" class="headerlink" title="路上的那张照片"></a>路上的那张照片</h2><p>这张照片是在路上拍的。</p>
+<p><img src="/images/xiaozhu-2026/on-the-road-hand.jpg" alt="在路上的牵手照"></p>
+<p>我也很喜欢它。</p>
+<p>照片里没有脸，只有牵在一起的手和车里的光。可是它让我想起很多东西：想起坐在她身边的感觉，想起我们一起去某个地方，想起窗外的光落进来，想起她的手在我手里的温度。</p>
+<p>有时候一张照片会比很多文字更直接。</p>
+<p>它不会解释太多，只是把一个瞬间放在那里。看见它的时候，我会立刻想起：那天她就在我旁边，我们真的一起走在路上。</p>
+<p>我喜欢“在路上”这个状态。</p>
+<p>因为我们现在也像是在路上。我们刚刚开始走进彼此的生活，还会有很多见面、很多等待、很多需要互相理解的时刻。两个校区之间的距离还在，日常的忙碌也还在。她有自己的课程、朋友、宿舍和安排，我也有自己的事情要做。</p>
+<p>可只要我们愿意一次次靠近，路就不是阻隔。</p>
+<p>路会变成奔赴。</p>
+<p>我想和她一起走很多路。晴天的路，晚上回宿舍的路，地铁站到学校的路，吃完饭以后慢慢散步的路。也想走一些更长的路，比如从现在走到以后，从热烈走到习惯，从小心翼翼走到越来越自然。</p>
+<p>只要那个人是她，我就愿意走。</p>
+<p>我也希望以后有很多张这样的照片。</p>
+<p>不一定都要发出来，不一定都要拍得多好。可能是在路上，可能是在校园里，可能是在吃饭前，可能是在某个晚上散步的时候。只要它们能留住一点我们在一起的证据，我就会很喜欢。</p>
+<p>因为照片会提醒人：那些瞬间真的发生过。</p>
+<p>她真的来过我身边，我们真的一起走过路，真的在车里牵过手，真的在两个学校之间一次次靠近。以后再回头看，这些照片大概会比很多长篇大论都更直接地告诉我，那段时间我有多爱她。</p>
+<h2 id="她让我对以后有了很具体的想象"><a href="#她让我对以后有了很具体的想象" class="headerlink" title="她让我对以后有了很具体的想象"></a>她让我对以后有了很具体的想象</h2><p>以前说到“以后”，我想到的东西常常很模糊。</p>
+<p>可能是学习，可能是项目，可能是工作，可能是一些还没有确定的计划。它们都很重要，但离当下有一点远。</p>
+<p>和她在一起以后，“以后”突然变得具体了很多。</p>
+<p>以后是下次见面。是一起吃一顿饭。是她下课以后我去接她。是她不舒服的时候我能陪在身边。是一起挑手机壳，一起看照片，一起在路上牵手。是她讲今天发生了什么，我认真听；是我遇到开心的事，也第一时间想告诉她。</p>
+<p>以后也是很多重复的小事。</p>
+<p>很多次晚安，很多次早安，很多次“到宿舍了吗”，很多次“先去吃饭”，很多次“别熬太晚”。这些话看起来很普通，可如果能一直说下去，就会变成很长很长的陪伴。</p>
+<p>我很想和她有这样的以后。</p>
+<p>不是只停在刚开始的热烈里，而是在热烈以后继续认真地爱她。等最初的紧张慢慢变成熟悉，等每一次见面不再像一场小远征，等我们可以越来越自然地出现在彼此的日常里。</p>
+<p>我想让她知道，无论以后忙不忙，累不累，路远不远，我都会把她放在心上。</p>
+<p>她对我来说不是生活的点缀。</p>
+<p>她已经成了我生活里很重要的一部分。</p>
+<p>有时候我会想，如果以后能更常陪在她身边就好了。</p>
+<p>不是每一次都要安排得很正式。很多时候，我只是想出现在她一天里很普通的位置。比如她下课以后一起去吃饭，饭后慢慢走一会儿；她写作业的时候我在旁边陪着；她困了就让她先睡；她想讲宿舍里的事，我就听她讲；她不想说话的时候，我们就安静待着。</p>
+<p>我想要的陪伴不是一阵热闹。</p>
+<p>而是日复一日地在。</p>
+<p>在她需要的时候在，在她没开口但其实很累的时候也在。在她很好的时候替她高兴，在她觉得自己没那么好的时候也继续爱她。把她放进未来，不是说一句很大的承诺，而是在每一天里都选择靠近她一点。</p>
+<h2 id="认真地炫耀一次"><a href="#认真地炫耀一次" class="headerlink" title="认真地炫耀一次"></a>认真地炫耀一次</h2><p>所以，这篇文章确实是在炫耀。</p>
+<p>炫耀我有一个特别好的女朋友。</p>
+<p>她好在很具体的地方。她会认真对待自己的事，会努力完成作业和课程，会在累的时候还坚持去做该做的事。她会把朋友放在心上，也会把我的感受放在心上。她会害羞，会撒娇，会纠结，会讲很多可爱的小事，也会把那些不那么轻松的时刻交给我一点。</p>
+<p>她让我觉得爱不是一个很远的词。</p>
+<p>爱可以落在每一顿饭里，落在每一次牵手里，落在她说不舒服时的担心里，落在她讲作业和上课时的陪伴里，落在我一次次想去见她的路上。</p>
+<p>我很爱她。</p>
+<p>也很依恋她。</p>
+<p>这种依恋不是想把她困在我身边，而是我很珍惜她，也很想参与她的生活。我想她自由地做自己，也想在她需要的时候靠近。想她有自己的世界，也想在她的世界里有一个稳定的位置。</p>
+<p>我希望她开心的时候，我能在。</p>
+<p>她难过的时候，我也能在。</p>
+<p>她很累、很烦、很不想说话的时候，我仍然能在。</p>
+<p>如果暂时不能每一次都在她身边，那我就把每一次能见面的时间都好好珍惜。把每一次牵手都记住，把每一次拥抱都抱紧，把每一次她愿意分享给我的小事都认真收好。</p>
+<p>因为这些对我来说都很重要。</p>
+<p>她也很重要。</p>
+<p>我甚至觉得，“重要”这个词都还不够。</p>
+<p>她像是忽然改变了我生活的重心。以前一天结束就是一天结束，现在一天结束前，我会想起她。会想知道她今天过得怎么样，会想把自己的事讲给她听，也会想确认她有没有好好休息。我的生活并没有因此变得混乱，反而像多了一条很柔软的线，把很多零散的时间都串了起来。</p>
+<p>这条线通向她。</p>
+<p>所以我才会这么想陪着她，才会这么舍不得她累，才会这么在意她有没有吃饭、有没有睡好、有没有被好好对待。爱让人变得牵挂，也让人变得更想成为一个可靠的人。</p>
+<p>我想做她可以依靠的人。</p>
+<p>不是只在大事发生时出现，而是在小事里也一直在。她说一句不舒服，我会听进去；她说一句不想吃饭，我会放在心上；她说一句今天很累，我会想办法让她轻松一点。也许我不能每一次都做得很好，但我会一直认真。</p>
+<h2 id="就写到这里"><a href="#就写到这里" class="headerlink" title="就写到这里"></a>就写到这里</h2><p>写这篇文章的时候，我一直在想，人为什么会这么想陪在另一个人身边。</p>
+<p>后来我觉得，可能是因为爱一个人的时候，会很自然地想见证她的每一天。不是只想听结果，而是想陪她经历过程。想知道她怎么从早上走到晚上，怎么从疲惫里缓过来，怎么因为一件小事开心，也怎么在难过的时候慢慢被安抚。</p>
+<p>我想陪她过很多天。</p>
+<p>想陪她过有安排的日子，也想陪她过没什么特别事情的日子。想陪她去远一点的地方，也想陪她在学校附近随便走走。想在她身边，想牵她的手，想让她知道她一直被我认真爱着。</p>
+<p>这就是我现在最想写下来的事。</p>
+<p>我有一个特别好的女朋友。</p>
+<p>我很爱她。</p>
+<p>我想一直陪在她身边。</p>
+<p>如果以后有人问我，为什么要把这篇文章放在个人网站上，我大概会说，因为这也是我生活里很重要的一部分。</p>
+<p>项目、音乐、代码、博客本身，都是我认真喜欢过、认真投入过的东西。那她更应该被写下来。因为她不是某段时间的插曲，而是让我开始重新理解“陪伴”和“爱”的人。</p>
+<p>我希望很多年以后再读到这里，还能想起现在这份很浓的依恋。想起我曾经那么想见她，那么想陪她，那么想把她每一个普通的日子都认真接住。</p>
+<p>也希望到那个时候，我还是会很确定地说：</p>
+<p>我有一个特别好的女朋友。</p>
+<p>我一直都很爱她。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
+    
+</div>
+
+          <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2024 - 2026 阿猹的小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;ACha_
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+        <div>
+            备案号：
+            
+            <a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20269876">萌ICP备20269876号</a>
+            
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+          <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+              <img id="preview-content" ref="previewContent" />
+            </div>
+          </transition>
+          
+    </div>
+    <script src="/js/main.js"></script>
+    
+      
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://comment.acha.xx.kg",
+        region: "",
+        path: location.pathname,
+        lang: "zh-CN",
+    })
+</script>
+
+
+        
+          <div id="dashboard-toggle" onclick="toggleDashboard()">
+            <span id="toggle-icon" style="transition: transform 0.3s ease; display: inline-block;">🎵</span>
+          </div>
+          <div id="dashboard-container">
+            <div id="fps-monitor">
+              <span id="fps-dot"></span>
+              <span id="fps-text">FPS: --</span>
+            </div>
+
+            <div id="traffic-monitor">
+              <span>👁️ 总浏览数: <span id="busuanzi_value_site_pv" class="data-num">...</span></span>
+              <span>👤 总访客数: <span id="busuanzi_value_site_uv" class="data-num">...</span></span>
+            </div>
+
+            <meting-js server="netease" type="playlist" id="17820803221" fixed="false" mini="false" order="list"
+              loop="all" list-folded="true" theme="#00ff00" preload="none">
+            </meting-js>
+          </div>
+
+          <style>
+            #dashboard-container {
+              position: fixed;
+              bottom: 80px;
+              left: 20px;
+              z-index: 9999;
+              width: 360px;
+              background: rgba(255, 255, 255, 0.85);
+              backdrop-filter: blur(15px);
+              -webkit-backdrop-filter: blur(15px);
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 12px;
+              box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+              overflow: hidden;
+              font-family: inherit;
+              transform-origin: bottom left;
+              transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+
+            #fps-monitor {
+              padding: 10px 15px;
+              display: flex;
+              align-items: center;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+              color: #333;
+              font-size: 14px;
+              font-weight: bold;
+            }
+
+            #fps-dot {
+              width: 8px;
+              height: 8px;
+              background: currentColor;
+              border-radius: 50%;
+              margin-right: 8px;
+              box-shadow: 0 0 6px currentColor;
+              animation: blink 1.5s infinite;
+            }
+
+            #traffic-monitor {
+              padding: 8px 15px;
+              display: flex;
+              justify-content: space-between;
+              font-size: 12px;
+              color: #555;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            }
+
+            #dashboard-toggle {
+              position: fixed;
+              bottom: 20px;
+              left: 20px;
+              z-index: 10000;
+              width: 44px;
+              height: 44px;
+              background: rgba(255, 255, 255, 0.85);
+              backdrop-filter: blur(15px);
+              -webkit-backdrop-filter: blur(15px);
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 50%;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 20px;
+              color: #333;
+              transition: all 0.3s ease;
+            }
+
+            #dashboard-toggle:hover {
+              transform: scale(1.1);
+            }
+
+            .dashboard-hidden {
+              opacity: 0 !important;
+              transform: translateY(20px) scale(0.9) !important;
+              pointer-events: none !important;
+            }
+
+            .data-num {
+              font-weight: bold;
+              color: #0078d7;
+            }
+
+            .aplayer {
+              margin: 0 !important;
+              background: transparent !important;
+              box-shadow: none !important;
+              color: #333 !important;
+            }
+
+            .aplayer .aplayer-info {
+              border-bottom: none !important;
+              padding: 10px !important;
+            }
+
+            .aplayer .aplayer-info .aplayer-music .aplayer-title {
+              color: #111 !important;
+              font-size: 14px !important;
+              font-weight: bold;
+            }
+
+            .aplayer .aplayer-info .aplayer-music .aplayer-author {
+              color: #666 !important;
+            }
+
+            .aplayer .aplayer-list ol li {
+              border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+            }
+
+            .aplayer .aplayer-list ol li:hover {
+              background: rgba(0, 0, 0, 0.04) !important;
+            }
+
+            .aplayer .aplayer-list ol li.aplayer-list-light {
+              background: rgba(0, 0, 0, 0.08) !important;
+            }
+
+            .aplayer .aplayer-list ol li .aplayer-list-title {
+              color: #222 !important;
+              font-weight: bold;
+            }
+
+            .aplayer .aplayer-list ol li .aplayer-list-author {
+              color: #777 !important;
+            }
+
+            .aplayer .aplayer-list ol li .aplayer-list-index {
+              color: #999 !important;
+            }
+
+            .aplayer .aplayer-lrc:before,
+            .aplayer .aplayer-lrc:after {
+              display: none !important;
+            }
+
+            @keyframes blink {
+
+              0%,
+              100% {
+                opacity: 1;
+              }
+
+              50% {
+                opacity: 0.3;
+              }
+            }
+
+            @media screen and (max-width: 768px) {
+              #dashboard-container {
+                width: calc(100vw - 30px) !important;
+                left: 15px !important;
+                bottom: 75px !important;
+              }
+
+              #fps-monitor,
+              #traffic-monitor {
+                padding: 6px 12px !important;
+              }
+
+              #fps-text {
+                font-size: 13px !important;
+              }
+
+              .aplayer .aplayer-list {
+                max-height: 200px !important;
+              }
+            }
+          </style>
+
+          <script>
+              (function () {
+                let lastTime = performance.now();
+                let frame = 0;
+                const fpsText = document.getElementById('fps-text');
+                const fpsDot = document.getElementById('fps-dot');
+                function updateFPS() {
+                  const now = performance.now();
+                  frame++;
+                  if (now - lastTime >= 1000) {
+                    const currentFps = Math.round((frame * 1000) / (now - lastTime));
+                    if (fpsText) fpsText.innerText = `FPS: ${currentFps}`;
+                    if (currentFps >= 55) {
+                      if (fpsText) fpsText.style.color = '#10b981';
+                      if (fpsDot) fpsDot.style.color = '#10b981';
+                    } else if (currentFps >= 30) {
+                      if (fpsText) fpsText.style.color = '#f59e0b';
+                      if (fpsDot) fpsDot.style.color = '#f59e0b';
+                    } else {
+                      if (fpsText) fpsText.style.color = '#ef4444';
+                      if (fpsDot) fpsDot.style.color = '#ef4444';
+                    }
+                    frame = 0;
+                    lastTime = now;
+                  }
+                  requestAnimationFrame(updateFPS);
+                }
+                updateFPS();
+              })();
+            function toggleDashboard() {
+              const dashboard = document.getElementById('dashboard-container');
+              const icon = document.getElementById('toggle-icon');
+              if (dashboard.classList.contains('dashboard-hidden')) {
+                dashboard.classList.remove('dashboard-hidden');
+                icon.innerHTML = '✖';
+                icon.style.transform = 'rotate(90deg)';
+              } else {
+                dashboard.classList.add('dashboard-hidden');
+                icon.innerHTML = '🎵';
+                icon.style.transform = 'rotate(0deg)';
+              }
+            }
+            document.getElementById('dashboard-container').classList.add('dashboard-hidden');
+          </script>
+          <canvas id="fireworks"
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999"></canvas>
+
+          <script>
+            var OriginTitle = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function () {
+              if (document.hidden) {
+                document.title = '快回来呀 ヾ(≧へ≦)〃';
+                clearTimeout(titleTime);
+              } else {
+                document.title = '欢迎光临 ヾ(≧▽≦*)o';
+                titleTime = setTimeout(function () { document.title = OriginTitle; }, 1000);
+              }
+            });
+
+            const canvas = document.getElementById('fireworks');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize); resize();
+            window.addEventListener('mousemove', (e) => {
+              for (let i = 0; i < 2; i++) {
+                particles.push({
+                  x: e.clientX, y: e.clientY, size: Math.random() * 3 + 1,
+                  spX: (Math.random() - 0.5) * 2, spY: (Math.random() - 0.5) * 2,
+                  color: `hsl(${Math.random() * 360}, 50%, 50%)`, alpha: 1
+                });
+              }
+            });
+            function animate() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              particles.forEach((p, i) => {
+                p.x += p.spX; p.y += p.spY; p.alpha -= 0.02;
+                if (p.alpha <= 0) return particles.splice(i, 1);
+                ctx.globalAlpha = p.alpha; ctx.fillStyle = p.color;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+              });
+              requestAnimationFrame(animate);
+            }
+            animate();
+          </script>
+  </body>
+  </html>

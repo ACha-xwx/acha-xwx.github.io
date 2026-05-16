@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      Categories | 阿猹的小窝
+      让Tinyhttpd跑起我的个人博客 | 阿猹的小窝
     </title>
     <meta name="author" content="ACha_" />
     <meta name="description" content="欢迎来到阿猹的小窝！这里记录了我的音乐创作、编程学习和生活点滴。希望你能喜欢这里的内容，并且在这里找到有用的信息和灵感！如果你有任何问题或者建议，欢迎随时联系我！😉" />
@@ -44,6 +44,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://unpkg.com/twikoo@1.7.1/dist/twikoo.all.min.js"></script>
 
 
 
@@ -200,25 +206,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-          <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%9A%8F%E7%AC%94/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                随笔
-            </a>
+          <div class="article">
+    <div>
+        <h1>让Tinyhttpd跑起我的个人博客</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/16
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -227,29 +228,97 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                更新说明
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/" style="color: #00bcd4">
+                    项目记录
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Tinyhttpd/" style="color: #03a9f4">
+                    Tinyhttpd
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="color: #ff7d73">
+                    C语言
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" style="color: #00bcd4">
+                    个人博客
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                自我介绍
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>这篇算是给 2025 年寒假专业实践作业补档。</p>
+<p>当时作业题目大概是把 Tinyhttpd、SDS 和线程池揉在一起，做一个更能扛事儿的小 Web 服务器。听起来很“专业实践”，实际做着做着，我就开始想：那不如让它把我的个人博客跑起来吧。</p>
+<p>于是阿猹的小窝就这样被一个 C 语言小服务器从硬盘角落里拽出来了（？）</p>
+<span id="more"></span>
+
+<hr>
+<p>一开始我对 Tinyhttpd 的印象其实很朴素：它小，代码不算长，适合看清楚一个 HTTP 服务器大概怎么从 <code>socket</code>、<code>bind</code>、<code>listen</code>、<code>accept</code> 一路走到 <code>send</code>。</p>
+<p>但它也确实很“教学”。</p>
+<p>比如请求行用固定缓冲区接，静态文件发送方式也偏文本，遇到图片、CSS、JS、中文路径这些现实世界的小东西，就容易露出一点旧时代的味道。要是只跑原来的 demo 页面，那当然没啥问题；但我偏偏想塞进去一个 Hexo 博客。于是事情就变得有意思起来了。</p>
+<p>先把项目跑起来倒是不难。在 <code>Tinyhttpd-master</code> 目录下：</p>
+<pre><code class="bash">make
+./httpd
+</code></pre>
+<p>然后它会在 <code>4000</code> 端口等着。浏览器打开 <code>http://127.0.0.1:4000/</code>，如果顺利的话，就能看到博客首页。</p>
+<p>第一次看到页面真的出来的时候，我还是挺开心的。虽然它只是本地跑起来，但那种感觉很像：啊，这个小东西终于不是报告里的截图了，它真的在干活。</p>
+<p>接下来就是一点点收拾它。</p>
+<p>原版读请求的地方，我换成了 SDS。SDS 是 Redis 里面那套动态字符串思路，重点就是不用被固定长度的数组框死。URL 稍微长一点、请求行稍微复杂一点，也不用一直担心它把缓冲区挤爆。</p>
+<p>并发那边，我把“来一个连接就开一个线程”的方式换成了线程池。主线程继续接连接，接到之后把活丢给工作线程处理。这样结构会舒服很多，也不用每次请求都现开线程，多少有点省心。</p>
+<p>真正让博客能正常显示的，是后面那堆看起来不太起眼的小修小补：</p>
+<ul>
+<li>URL 解码，不然中文路径会很尴尬；</li>
+<li>用 <code>fread + send</code> 发文件，不再拿文本方式硬读静态资源；</li>
+<li>补 MIME 类型，让 CSS、JS、PNG、JPG、SVG、ICO 这些都能被浏览器认出来；</li>
+<li>把 <code>htdocs</code> 换成真实博客页面，而不是只放一个孤零零的测试页。</li>
+</ul>
+<p>这些东西单独看都不算很宏大，但少一个页面就可能怪一下。CSS 没加载，页面就素面朝天；图片没发对，就碎给你看；中文路径没处理好，博客文章就开始失踪。Web 开发有时候就是这样，问题不一定很大，但很会烦人。</p>
+<p>中间也踩过一些很典型的坑。</p>
+<p>比如 SDS 那边有一次宏名写岔了，<code>SDS_HDR</code> 和 <code>SDS_HDR_VAR</code> 看着很像，编译器可不会心软。还有线程池传 socket 的时候，一开始把 <code>&amp;client_sock</code> 传进去了，结果并发一上来，几个任务抢着看同一个变量，最后就开始出现 <code>Bad file descriptor</code>。</p>
+<p>这个 bug 当时很有迷惑性，因为低压下看着还行，一上压测就开始露馅。后来改成按值传 socket，世界安静了。属于是 C 语言很经典的“你以为你传的是一个数字，其实你递过去的是一颗小地雷”（bushi）</p>
+<p>压测结果也还挺争气。</p>
+<p>在 <code>ab -n 2000 -c 1000 -k</code> 这组测试里，原版大概是 <code>2298.44</code> RPS，改完之后到了 <code>9917.29</code> RPS。最长请求时间也从 <code>510 ms</code> 降到了 <code>38 ms</code> 左右。</p>
+<p>后面又单独跑了更长一点的压力测试，改造版能到 <code>13325.78</code> RPS。把个人博客首页放进去测的时候，也跑到了 <code>13701.91</code> RPS，失败请求是 <code>0</code>。</p>
+<p>当然，这不代表它突然变成了什么生产级服务器。它没有 HTTPS，没有 epoll，也还有很多可以继续优化的地方。只是作为一个寒假专业实践作业，它已经从“教材里的小例子”变成了一个能把我博客跑起来的小项目，这一点就已经很够了。</p>
+<p>更神奇的是，这个项目最后还真的一路进了答辩决赛。</p>
+<p>最后成绩是第三名，奖金 5000 元。</p>
+<p>说实话，拿到这个结果的时候还是有点恍惚的。毕竟一开始只是寒假作业，后来变成了查资料、改代码、写报告、做 PPT、准备答辩，最后居然还变成了阿猹人生第一桶金。这个剧情发展多少有点超出预期。</p>
+<p>所以这篇就当作一次补档吧。</p>
+<p>Tinyhttpd 本身很小，但它刚好把很多东西串了起来：C 语言、网络编程、线程池、字符串处理、静态资源、压测，还有我那个差点继续在角落里吃灰的个人博客。</p>
+<p>不管怎么说，它确实跑起来了。</p>
+<p>那么，就先记录到这里吧。一起加油！</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -289,6 +358,22 @@
     </div>
     <script src="/js/main.js"></script>
     
+      
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://comment.acha.xx.kg",
+        region: "",
+        path: location.pathname,
+        lang: "zh-CN",
+    })
+</script>
+
+
+        
           <div id="dashboard-toggle" onclick="toggleDashboard()">
             <span id="toggle-icon" style="transition: transform 0.3s ease; display: inline-block;">🎵</span>
           </div>

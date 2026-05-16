@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      Categories | 阿猹的小窝
+      数模A题小记：把校园圈项目先跑起来！ | 阿猹的小窝
     </title>
     <meta name="author" content="ACha_" />
     <meta name="description" content="欢迎来到阿猹的小窝！这里记录了我的音乐创作、编程学习和生活点滴。希望你能喜欢这里的内容，并且在这里找到有用的信息和灵感！如果你有任何问题或者建议，欢迎随时联系我！😉" />
@@ -44,6 +44,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://unpkg.com/twikoo@1.7.1/dist/twikoo.all.min.js"></script>
 
 
 
@@ -200,25 +206,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-          <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%9A%8F%E7%AC%94/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                随笔
-            </a>
+          <div class="article">
+    <div>
+        <h1>数模A题小记：把校园圈项目先跑起来！</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/16
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -227,29 +228,266 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                更新说明
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/" style="color: #ffa2c4">
+                    项目记录
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="color: #03a9f4">
+                    数学建模
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/" style="color: #ff7d73">
+                    社交网络
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                自我介绍
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <iframe loading="lazy" frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=86 src="//music.163.com/outchain/player?type=2&id=1445838270&auto=0&height=66"></iframe>
+
+<p>是一些关于这次数学建模 A 题的小记啊……</p>
+<span id="more"></span>
+
+<hr>
+<h2>先说说这个题</h2>
+
+<p>这次是 5 月 1 号我们学校办的 2026“工大出版社杯”西北工业大学大学生数学建模竞赛。</p>
+<p>我和两位队友一起做了 A 题，成员就不展开写真名了，反正就是我们三个人。</p>
+<p>文件夹里有 A、B 两题。B 题是农作物优化种植，听起来就是那种“变量一列，约束一堆，然后开始求最大收益”的重量级选手。A 题叫《校园社交平台“好友关系与社交价值”分析》，看起来稍微亲切一点：好友关系、用户属性、发帖互动、话题参与度……总之是一个校园社交网络。</p>
+<p>所以最后还是选了 A 题。</p>
+<p>我们三个人里，我负责把这篇小记顺手记下来，另外两位队友一起把模型和结果跑了起来。</p>
+<p>主要是它比较像能讲人话的题。节点是学生，边是好友关系，再把年级、专业、班级、社团和活跃时段这些信息挂上去，就可以开始研究“圈子”“推荐”“传播”这些东西。至少比一上来就被 10 年种植规划创飞要温柔一点<small>（一点点）</small>。</p>
+<p>题目大概分成这几件事：</p>
+<ul>
+<li>找社群，尤其是内部连接密度最高的 5 个社群。</li>
+<li>给 <code>S11</code> 推荐 3 个还不是好友但适合认识的人。</li>
+<li>找科技类话题的关键传播用户，并模拟 48 小时内的扩散。</li>
+<li>选做题是文化类话题的定向推送策略。</li>
+</ul>
+<p>看起来很清楚，对吧。</p>
+<p>然后真正打开附件的时候，事情就开始变成“嗯，我先把项目目录搭好吧”（</p>
+<h2>数据长什么样</h2>
+
+<p>A 题附件是一个 Excel，里面有三张表：</p>
+<ul>
+<li><code>好友关系表</code></li>
+<li><code>用户属性表</code></li>
+<li><code>行为数据表</code></li>
+</ul>
+<p>扫完以后发现规模还挺适合做比赛题：</p>
+<ul>
+<li>用户节点：<code>200</code></li>
+<li>好友关系：<code>1198</code></li>
+<li>网络密度：约 <code>0.0602</code></li>
+<li>平均度：约 <code>11.98</code></li>
+<li>平均聚类系数：约 <code>0.1869</code></li>
+<li>整张网络是连通的，没有孤立点</li>
+</ul>
+<p>用户属性里有年级、专业类别、具体专业、社团和班级。行为表里有动态发布数量、互动频率、活动参与次数、科技类&#x2F;文化类话题参与度，还有活跃时段。</p>
+<p>这就比单纯一张好友表好玩多了。</p>
+<p>如果只看谁朋友多，就很容易写成“度数高，所以重要”。但题目明显不是只想要这个。它更像是在问：这个校园圈里，哪些人天然形成了小团体，哪些人适合被系统推到一起，哪些人发一条科技类消息更容易传开。</p>
+<h2>先把目录收拾出来</h2>
+
+<p>我这次先把分析和论文分开了。</p>
+<p>本地大概拆成两个工作区：</p>
+<pre><code class="text">a-topic-workspace/
+math-modeling-a-paper/
+</code></pre>
+<p>这样做有一个很朴素的好处：脚本归脚本，论文归论文，不至于所有东西塞在一起，最后变成“谁动了我的论文主文件”和“这个 csv 到底是哪一问的输出”大型悬疑现场。</p>
+<p><code>a-topic-workspace</code> 里面主要有这些：</p>
+<pre><code class="text">scripts/
+outputs/
+notes/
+requirements.txt
+run_all_prechecks.ps1
+README.md
+</code></pre>
+<p><code>scripts</code> 负责跑模型，<code>outputs</code> 负责放结果，<code>notes</code> 放一些队内说明。</p>
+<p>依赖也尽量收得比较干净：</p>
+<pre><code class="text">openpyxl
+networkx
+pandas
+numpy
+matplotlib
+seaborn
+python-louvain
+</code></pre>
+<p>一开始最怕的不是模型不高级，而是大家电脑上跑不起来。所以先把工作区弄成一个“至少能开工”的形状，这件事真的很重要。</p>
+<h2>一键预检查，先跑通再说</h2>
+
+<p>开工清单里写得最实用的一步是：</p>
+<pre><code class="powershell">powershell -ExecutionPolicy Bypass -File .\run_all_prechecks.ps1
+</code></pre>
+<p>它会按顺序跑几个 starter 脚本：</p>
+<pre><code class="powershell">python .\scripts\01_data_overview.py
+python .\scripts\02_question1_community.py
+python .\scripts\03_question2_recommendation.py
+python .\scripts\04_question3_seed_ranking.py
+</code></pre>
+<p>跑完以后，至少要看到这些东西：</p>
+<pre><code class="text">outputs\overview\network_summary.json
+outputs\question1\community_summary.csv
+outputs\question2\s11_candidates.csv
+outputs\question3\tech_seed_ranking.csv
+</code></pre>
+<p>看到这些文件真的有一种“终于不是空文件夹了”的安心感。</p>
+<p>数模最吓人的时刻，不一定是公式不会推，而是三个人看着题面发呆：你问我从哪开始，我问你从哪开始，最后大家一起沉默。</p>
+<p>所以先跑通，哪怕结果还粗糙，也比脑内建模强太多了。</p>
+<h2>第一问：校园圈里到底有几个圈</h2>
+
+<p>第一问做的是社群识别。</p>
+<p>主方法用了 Louvain。如果电脑上没有 <code>python-louvain</code>，脚本会退回 <code>networkx</code> 里的 greedy modularity。这个兜底很有必要，不然比赛时换一台电脑就寄，真的会让人很崩溃。</p>
+<p>目前跑出来：</p>
+<ul>
+<li>Louvain 社群数：<code>10</code></li>
+<li>模块度：约 <code>0.2472</code></li>
+<li>内部密度最高的前 5 个社群，分别呈现出一些计算机科学、化学、法学、机械工程、生物学等专业或社团倾向</li>
+</ul>
+<p>这里不只是把每个人分到某个编号里，还整理了社群规模、内部边数、内部密度、外部连接比例、年级分布、专业分布、社团分布等。</p>
+<p>后来还补了几张图，比如度分布、社群网络图、前五社群密度图、社群关系热力图、功能重叠热力图。</p>
+<p>图一出来，论文就好写很多。毕竟“请看图”有时候比“我给你念一串数字”友好得多。</p>
+<h2>第二问：给 S11 找朋友</h2>
+
+<p>第二问是给 <code>S11</code> 推荐 3 个还不是好友的人。</p>
+<p>这问做起来还挺像平台推荐系统的简化版。先排除已经是好友的人，再给剩下的候选人打分。</p>
+<p>打分里用了这些东西：</p>
+<ul>
+<li>共同好友数</li>
+<li>Jaccard 系数</li>
+<li>Adamic-Adar 指标</li>
+<li>同年级、同专业、同班级</li>
+<li>共同社团</li>
+<li>活跃时段是否一致</li>
+<li>话题参与度相似程度</li>
+</ul>
+<p>当前推荐前三是：</p>
+<pre><code class="text">S2
+S3
+S9
+</code></pre>
+<p>比较有意思的是，这三个候选人不是单靠“属性很像”冲上来的，而是和 <code>S11</code> 有比较多共同邻居。也就是说，他们可能早就在同一个社交半径里绕来绕去了，只是好友关系还没有连上。</p>
+<p>这就很适合写推荐理由：不是系统硬塞一个陌生人，而是把“你们其实已经离得很近”这件事说出来。</p>
+<h2>第三问：科技类消息该让谁先发</h2>
+
+<p>第三问是信息传播。</p>
+<p>现在已经先做了关键用户排序：把网络中心性和行为特征揉在一起，算一个适合科技类话题传播的种子分数。</p>
+<p>用到的指标有：</p>
+<ul>
+<li>度中心性</li>
+<li>介数中心性</li>
+<li>接近中心性</li>
+<li>k-core</li>
+<li>平均互动频率</li>
+<li>发帖数量</li>
+<li>科技类话题参与度</li>
+</ul>
+<p>目前排在前面的用户是：</p>
+<pre><code class="text">S6
+S14
+S3
+S7
+S45
+</code></pre>
+<p>其中 <code>S6</code> 当前综合分最高。</p>
+<p>不过这问还没有完全收口。题目要求的是中午 12 点发帖后 48 小时内的传播过程，所以后面还要把传播仿真补上，不能只停在“谁看起来比较重要”。</p>
+<p>这也是之后论文里最需要继续补强的部分。</p>
+<h2>论文工程也搭了一份</h2>
+
+<p>论文这边用了 LaTeX，主文件单独放，正文分在 <code>sections</code> 里：</p>
+<pre><code class="text">01-problem-restatement.tex
+02-problem-analysis.tex
+03-assumptions-symbols.tex
+04-data-preprocessing.tex
+05-question1.tex
+06-question2.tex
+07-question3.tex
+08-question4.tex
+08-validation.tex
+09-conclusion.tex
+</code></pre>
+<p>编译也写成了一句：</p>
+<pre><code class="powershell">powershell -ExecutionPolicy Bypass -File .\build.ps1
+</code></pre>
+<p>这次比赛没有看到特别强制的官方 LaTeX 模板，所以用 <code>ctexart</code> 先稳稳写起来。模板太重反而容易把时间吃掉，最后变成“题没做完，格式倒是很学位论文”。</p>
+<p>三个人分工也简单粗暴：</p>
+<ul>
+<li>1 号看数据概览和第一问；</li>
+<li>2 号看第二问和第三问；</li>
+<li>3 号看论文主文件，把结果、表格和图接进去。</li>
+</ul>
+<p>没有什么高深管理学，就是让每个人知道自己先点哪个文件。</p>
+<h2>几个小坑</h2>
+
+<p>第一个坑是中文路径。</p>
+<p>平时看着好好的，一到脚本或命令行里就可能开始变成问号。所以最后原始文件夹保留中文，分析工作区尽量叫 <code>a-topic-workspace</code>。朴素，但是省心。</p>
+<p>第二个坑是依赖。</p>
+<p>Louvain 好用，但不是每台电脑都有。所以第一问脚本加了回退方案。能用 Louvain 就用 Louvain，不能用就先 greedy modularity 顶上。比赛里先活下来，再谈优雅。</p>
+<p>第三个坑是论文回填。</p>
+<p>脚本跑出结果是一回事，把结果写进论文又是另一回事。<code>outputs</code> 里有 JSON、CSV、图，但论文里还要解释它们：为什么这么建模，结果说明了什么，哪里可靠，哪里还需要验证。</p>
+<p>这个步骤看起来像“整理”，其实很花时间。</p>
+<h2>目前到哪了</h2>
+
+<p>现在这个项目已经不是空架子了。</p>
+<p>分析工作区能跑，论文工程能编译，第一问的社群结果和图比较完整，第二问已经有 <code>S11</code> 的前三推荐，第三问也有科技类关键用户的初筛。</p>
+<p>后面还要补的主要是：</p>
+<ul>
+<li>第二问、第三问正文再写厚一点；</li>
+<li>第三问传播仿真继续补；</li>
+<li>把结果图表和论文里的解释统一起来；</li>
+<li>最后检查 LaTeX 的版式和告警。</li>
+</ul>
+<p>总之，从“我该从哪里开始啊”进化到了“这几块还要继续补”。虽然听起来还是要干活，但至少已经能看见路了。</p>
+<hr>
+<p>这次搭项目最大的感觉是：数模比赛真的不只是建模。</p>
+<p>它还包括读题、清数据、搭目录、写脚本、分工、跑结果、画图、写论文、改格式……每一步都不算惊天动地，但每一步漏掉都可能在最后狠狠咬你一口。</p>
+<p>不过，把这些东西一点点收拾起来以后，原本很吓人的题目也会慢慢变成一个能推进的工程。</p>
+<p>那么这篇就先记到这里啦。</p>
+<p>希望后面第三问传播仿真和论文终稿也能顺利收掉。阿猹继续加油！😎</p>
+<h2>论文原文</h2>
+
+<p>如果想看更完整的建模过程和论文正文，也可以在这里直接翻 PDF。<br>不过它毕竟是比赛论文，和上面这种碎碎念不是一个阅读速度，建议找个有耐心的时间慢慢看（</p>
+<details>
+<summary>展开阅读论文 PDF</summary>
+
+<iframe
+  src="/files/math-modeling-a-paper.pdf#toolbar=1&navpanes=0"
+  width="100%"
+  height="760"
+  style="border: 1px solid #ddd; border-radius: 8px;">
+</iframe>
+
+</details>
+
+<p>如果预览加载不出来，可以<a href="/files/math-modeling-a-paper.pdf" target="_blank">点这里单独打开 PDF</a>。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -289,6 +527,22 @@
     </div>
     <script src="/js/main.js"></script>
     
+      
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://comment.acha.xx.kg",
+        region: "",
+        path: location.pathname,
+        lang: "zh-CN",
+    })
+</script>
+
+
+        
           <div id="dashboard-toggle" onclick="toggleDashboard()">
             <span id="toggle-icon" style="transition: transform 0.3s ease; display: inline-block;">🎵</span>
           </div>

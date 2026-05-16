@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      Categories | 阿猹的小窝
+      提示词要不要讲礼貌：大创项目小记 | 阿猹的小窝
     </title>
     <meta name="author" content="ACha_" />
     <meta name="description" content="欢迎来到阿猹的小窝！这里记录了我的音乐创作、编程学习和生活点滴。希望你能喜欢这里的内容，并且在这里找到有用的信息和灵感！如果你有任何问题或者建议，欢迎随时联系我！😉" />
@@ -44,6 +44,12 @@
 <script src="/js/lib/preview.js"></script>
 
 
+
+
+
+
+
+<script src="https://unpkg.com/twikoo@1.7.1/dist/twikoo.all.min.js"></script>
 
 
 
@@ -200,25 +206,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-          <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/categories/%E9%9A%8F%E7%AC%94/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                随笔
-            </a>
+          <div class="article">
+    <div>
+        <h1>提示词要不要讲礼貌：大创项目小记</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/16
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/" style="background: #00a596">
+        <span class="category">
+            <a href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -227,29 +228,181 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                更新说明
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%A4%A7%E5%88%9B%E9%A1%B9%E7%9B%AE/" style="color: #00bcd4">
+                    大创项目
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" style="color: #00a596">
+                    大语言模型
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" style="color: #ffa2c4">
+                    提示词工程
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                自我介绍
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <iframe loading="lazy" frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=86 src="//music.163.com/outchain/player?type=2&id=1445838270&auto=0&height=66"></iframe>
+
+<p>最近终于把这个大创项目推进到可以好好回顾的节点了。</p>
+<p>项目题目叫《提示词的礼貌程度对国产大语言模型输出结果的影响分析》。听起来很正经，换成日常一点的说法就是：</p>
+<blockquote>
+<p>和模型好好说话，它会不会更认真答题？</p>
+</blockquote>
+<p>这是西北工业大学大学生创新训练计划项目，我作为项目负责人，和团队成员在指导老师带领下一起推进。中间有选题、数据集、实验、论文、答辩和展示，一路下来比一开始想象的要扎实得多。这里就不写成正式汇报了，简单记一下这个项目是怎么搭起来的。</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="为什么会做这个"><a href="#为什么会做这个" class="headerlink" title="为什么会做这个"></a>为什么会做这个</h2><p>这个题最开始吸引人的地方，是它很日常。</p>
+<p>平时用大模型的时候，经常会看到一种说法：跟模型客气一点，它是不是会表现更好？也有人觉得这只是使用者自己的心理安慰。这个问题听起来有点玄，但老师带着我们讨论以后，发现它其实可以被拆得很清楚：</p>
+<p>同一道题，只改提示词的语气，模型的正确率、输出长度、推理过程、回答结构会不会变？</p>
+<p>于是项目就从这个问题出发，慢慢变成了一套完整实验。</p>
+<p>真正做起来以后，我最大的感受是：问模型问题并不难，难的是把题目、prompt、实验记录、清洗脚本、分析口径都整理到能复现、能解释、能写进论文的状态。实验本身像一条线，数据清理和口径统一更像一团线，稍不注意就会绕在一起。</p>
+<h2 id="数据集是怎么收拾出来的"><a href="#数据集是怎么收拾出来的" class="headerlink" title="数据集是怎么收拾出来的"></a>数据集是怎么收拾出来的</h2><p>现在项目主线用的是 Version 2 数据集。范围收得比较干净：</p>
+<ul>
+<li>2023 到 2025 年浙江卷</li>
+<li>1 月和 6 月两个场次</li>
+<li>九门学科</li>
+<li>只保留能完整文本化、没有图片依赖的选择题</li>
+</ul>
+<p>最开始抽出来的文本候选题有 <code>644</code> 道，但这只是“抽取阶段”的口径。后来又做了一轮更保守的 LaTeX 转写和人工复核，把公式、图式依赖比较强的题剔掉，最后正式实验使用的是 <code>635</code> 道题。</p>
+<p>这个地方后来专门统一了一遍 README。因为如果不说明清楚，后面写论文、做答辩、看图表的时候很容易把 <code>644</code> 和 <code>635</code> 反复混用。现在正式口径已经统一成：</p>
+<ul>
+<li>正式题目：<code>635</code> 道</li>
+<li>五档语气 prompt：<code>3175</code> 条，也就是 <code>635 × 5</code></li>
+<li>每题每语气重复：<code>3</code> 次</li>
+<li>模型：Deepseek、Doubao、Qwen</li>
+<li>三模型总记录：<code>28575</code> 条</li>
+</ul>
+<p>看到这里的时候我也有点感慨：一开始只是想研究一句“你礼貌吗”，最后变成了快三万条记录的工程活。</p>
+<h2 id="prompt-怎么设计"><a href="#prompt-怎么设计" class="headerlink" title="prompt 怎么设计"></a>prompt 怎么设计</h2><p>语气不是我们随手编的。项目参考了论文《Should We Respect LLMs? A Cross-Lingual Study on the Influence of Prompt Politeness on LLM Performance》里中文 C-Eval prompt 的礼貌等级，把它映射成五档：</p>
+<ul>
+<li>VeryPolite</li>
+<li>Polite</li>
+<li>Neutral</li>
+<li>Rude</li>
+<li>VeryRude</li>
+</ul>
+<p>为了减少干扰，每个 prompt 除了语气不同，题目内容和答案格式都尽量保持一致。模型最后需要输出类似 <code>答案：A</code> 的格式，这样后面脚本才能稳定提取选项。</p>
+<p>这里也遇到过一点小问题。早期版本里有一些“模拟用户猜测”的设定，后来觉得这会引入额外变量，就删掉了。这个项目越往后做，越觉得控制变量真的很重要。不然最后分析出来的东西看起来很热闹，但你不知道它到底是语气导致的，还是其他细节带出来的。</p>
+<h2 id="实验是怎么跑起来的"><a href="#实验是怎么跑起来的" class="headerlink" title="实验是怎么跑起来的"></a>实验是怎么跑起来的</h2><p>正式实验分成三个模型目录跑：</p>
+<ul>
+<li><code>Deepseek</code></li>
+<li><code>Doubao</code></li>
+<li><code>Qwen</code></li>
+</ul>
+<p>每个模型都用同一套 prompt 文件，同一套重复次数，同一套清洗和分析脚本。运行器主要负责几件事：</p>
+<ul>
+<li>按 prompt 调 API</li>
+<li>并发请求</li>
+<li>断点续跑</li>
+<li>保存原始 response</li>
+<li>清洗出标准答案</li>
+<li>标记异常和重复记录</li>
+</ul>
+<p>这一步最像“搭流水线”。单次实验不难，难的是跑到一半不能随便中断；即使中断，也要能接着跑，结果文件还不能乱。</p>
+<p>后来我们把原始结果和清洗结果分开存：原始 <code>responses.jsonl / responses.csv</code> 用来追溯，清洗后的 <code>responses_cleaned.csv</code> 用来正式统计。GitHub 对大文件也不太友好，所以又做了压缩清单和 <code>.gz</code> 提交策略。这部分不太浪漫，但很实用：尽量别让仓库被大文件拖慢。</p>
+<h2 id="分析的时候发现了什么"><a href="#分析的时候发现了什么" class="headerlink" title="分析的时候发现了什么"></a>分析的时候发现了什么</h2><p>最开始我以为重点会是正确率。</p>
+<p>结果跑完以后发现，事情没那么戏剧化。整体正确率非常高，三模型都在 98% 以上，而且五档语气之间没有出现那种“越礼貌越准”或者“越粗鲁越准”的稳定规律。</p>
+<p>比如总体上：</p>
+<ul>
+<li>Deepseek 正确率约 <code>98.68%</code></li>
+<li>Doubao 正确率约 <code>98.98%</code></li>
+<li>Qwen 正确率约 <code>98.79%</code></li>
+</ul>
+<p>如果只看最终对错，这个项目可能会变成一句很干的结论：语气对正确率影响不明显。</p>
+<p>但好玩的地方在后面。</p>
+<p>语气对 token 成本、输出长度和回答结构的影响更明显。也就是说，模型不一定因为你更礼貌就“答对更多”，但它可能会因为语气不同，换一种方式思考，或者至少换一种方式把答案写出来。</p>
+<p>比如：</p>
+<ul>
+<li>Deepseek 和 Qwen 的变化更多藏在 <code>reasoning_text</code> 里</li>
+<li>Doubao 的变化更多直接写在 <code>response_text</code> 里</li>
+<li><code>Polite</code> 不一定让答案暴涨，但更容易保留正式推理和选项分析这些中段结构</li>
+<li>极端语气有时会把回答拉向复述、检查，或者干脆更短的答案格式</li>
+</ul>
+<p>这个结论比“礼貌让模型更聪明”要朴素一点，但我觉得更真实。</p>
+<h2 id="从实验到论文、答辩和展示"><a href="#从实验到论文、答辩和展示" class="headerlink" title="从实验到论文、答辩和展示"></a>从实验到论文、答辩和展示</h2><p>项目中间其实经历了好几轮“看起来差不多了，但其实还不太行”的阶段。</p>
+<p>一开始图很多，文字也有点像报告堆出来的。后来就开始慢慢收拾：</p>
+<ul>
+<li>先把数据口径统一</li>
+<li>再把图表按准确率、token 成本、回答结构分开</li>
+<li>然后把论文第 4 部分重新组织成更清楚的讨论</li>
+<li>最后再反复改图题、改段落、改那些读起来很“AI 腔”的句子</li>
+</ul>
+<p>印象比较深的是回答结构那一块。最早我也差点把它写成“逐格念数值”，后来发现这真的很难读，于是改成看模式：先看 <code>Polite</code> 一列，再看正式推理和选项分析这些关键行，最后对比粗鲁语气有没有把结构带乱。</p>
+<p>这一步改完之后，文章终于不像在念表格了。</p>
+<p>还有一个小插曲是 Word 版。LaTeX 论文弄完以后，还要转成更接近老师模板的 Word。PDF 转 Word 当然不会完全听话，于是又调首页、页脚、字体、引用上标。属于科研之外的另一项细活。</p>
+<h2 id="现在这个项目大概长什么样"><a href="#现在这个项目大概长什么样" class="headerlink" title="现在这个项目大概长什么样"></a>现在这个项目大概长什么样</h2><p>目前仓库里比较重要的目录是：</p>
+<pre><code class="text">Datasets/Version 2/
+Experiments/第二轮正式实验/
+Data Analysis/
+Codes/
+References/
+</code></pre>
+<p><code>Datasets/Version 2/</code> 放题库和 prompt。</p>
+<p><code>Experiments/第二轮正式实验/</code> 放三模型实验结果和主分析。</p>
+<p><code>Data Analysis/</code> 放更适合论文、答辩和展示材料使用的补充图表和结论。</p>
+<p><code>Codes/</code> 里则是数据构建、实验运行、清洗、统计分析和出图脚本。</p>
+<p>如果以后要回头复盘这个项目，我觉得最重要的不是先看某一张图，而是先看口径：到底用了哪些题、哪些语气、哪些模型、哪些记录。这个东西只要乱一次，后面所有图都会开始变得可疑。</p>
+<h2 id="一点点收尾想法"><a href="#一点点收尾想法" class="headerlink" title="一点点收尾想法"></a>一点点收尾想法</h2><p>这个项目给我的感觉挺奇妙的。</p>
+<p>它一开始是个很日常的问题：和模型说话要不要客气一点？</p>
+<p>但做着做着，它变成了一个关于数据清洗、实验复现、统计口径、论文表达和工程整理的综合练习。最后得到的答案也没那么戏剧化：礼貌不是魔法，粗鲁也不是捷径。模型确实会被语气影响，但影响更多体现在它怎么组织回答、怎么分配 token、怎么呈现推理，而不是简单地让正确率明显升高。</p>
+<p>这反而让我觉得这个项目更有意思。</p>
+<p>毕竟，很多时候真正值得看的，不是“答案有没有变”，而是“它为什么用这种方式给出答案”。</p>
+<p>那么，这个大创项目也算是阶段性收尾啦。</p>
+<p>论文、答辩和展示都已经做完了，后面就剩下把仓库、材料和这篇小记慢慢归档好。至少现在回头看，它已经从“一个想法”变成了一套能讲清楚的东西。一起加油！~</p>
+<h2 id="论文原文"><a href="#论文原文" class="headerlink" title="论文原文"></a>论文原文</h2><p>如果想看更完整的实验设计、图表和论文正文，可以在这里直接预览 PDF：</p>
+<details>
+<summary>展开阅读论文 PDF</summary>
+
+<iframe
+  title="论文 PDF 阅读器"
+  loading="lazy"
+  src="/files/prompt-politeness-llm-paper.pdf#toolbar=1&amp;navpanes=0"
+  width="100%"
+  height="760"
+  style="border: 1px solid #ddd; border-radius: 8px; max-width: 100%;">
+</iframe>
+
+</details>
+
+<p>
+  如果预览加载不出来，也可以
+  <a href="/files/prompt-politeness-llm-paper.pdf" target="_blank" rel="noopener">点这里打开 PDF</a>。
+</p>
+
+
+
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="twikoo-container"></div>
+    </div>
+    
     
 </div>
 
@@ -289,6 +442,22 @@
     </div>
     <script src="/js/main.js"></script>
     
+      
+
+
+
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "https://comment.acha.xx.kg",
+        region: "",
+        path: location.pathname,
+        lang: "zh-CN",
+    })
+</script>
+
+
+        
           <div id="dashboard-toggle" onclick="toggleDashboard()">
             <span id="toggle-icon" style="transition: transform 0.3s ease; display: inline-block;">🎵</span>
           </div>
