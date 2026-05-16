@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>收拾，整理，以及翻新...</title>
-    <url>/2026/03/08/%E6%94%B6%E6%8B%BE%EF%BC%8C%E6%95%B4%E7%90%86%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%BF%BB%E6%96%B0/</url>
-    <content><![CDATA[
-
-
-
-是一些碎碎念啊……
-
-
-
-好久没有进行这个网站的维护工作了，甚至，可以说，连最基本的发送博客文章也没有……仿佛这个博客网站只是在高三紧张学习节点的寒假期间找到的一个缓解压力方式罢了。进入大学，学习，游戏，亦或是杂七杂八的事情，仿佛也跟本没有为这个小小的网站留一片栖存之地。若不是寒假作业（Tinyhttpd-Refactored）的存在，或许阿猹的小窝还会在我电脑一隅尘封良久……
-不管怎么样，我终究还是想起你了，不是吗😎
-收拾起了以前没有做完的旧摊子，把 About，Categories 和 Tags 这三个板块全部做完了（其实就是在终端创建一个文章的事儿，之前却一直没有弄……）
-随后加入了 Archives 页面内的站内帖子搜索功能，加入了博客文章的评论功能。
-一开始使用 Giscus ，但是后来发现 Giscus 必须登录 Github 才可以发送评论……于是换成了 Twikoo （https://github.com/twikoojs/twikoo）。
-Twikoo 使用了免费的MongoDB数据库，然后在 Vercel 上云端部署了 Twikoo，并将 Twikoo 连接到了我的 Hexo 主题里。
-在部署好了 Twikoo 后，开通了即时消息推送（使用 Qmsg酱）以及邮件通知提醒。并且给 Twikoo 加了 Cloudflare Turnstile 验证码（别说，Cloudflare 还真不愧是我们的赛博菩萨😂）
-随后加入了鼠标轨迹显示、FPS显示、网页名称变化以及 APlayer 播放器，里面塞了我的一个网易云歌单。简单做了一个毛玻璃效果，加入了一个旋钮开关并同时做了手机端适配。后来优化了一下网页性能。用 Vercel 给网页做了分流，加快了国内访问本网站的速度。
-加入了网页访问量统计。
-然后加入了Groceries Box页面，里面存放我弄的乱七八糟的小东西们。首先是 Dino Run（https://wayou.github.io/t-rex-runner/），Chrome的小彩蛋，一个基于 HTML，十分经典的恐龙快跑小游戏。
-然后加入了 Qexo ——管理 Hexo 的开源在线后台 （https://github.com/Qexo/Qexo），同样使用 MongoDB 数据库，Vercel 部署。同时给网页菜单栏加入了 Write! 板块，直接通向这个后台。
-在上数据结构课程的时候看到 HelloGithub 公众号发布的文章（真的是很棒的一个公众号！）里提到一个 JS 项目 cloud-mail（https://github.com/maillab/cloud-mail），于是萌生出制作一个以自己域名结尾的专属邮箱的想法。这个邮箱系统基于 Cloudflare Workers。利用 Cloudflare Email Routing 接收邮件，转交给 Cloudflare Workers 处理，最后把邮件正文存在 Cloudflare D1 这个边缘 SQL 数据库里。
-
-以后还会加一些什么功能呢？就看我能在Github上找到什么好东西吧！
-至少，按时更新帖子才是重要的😜
-那么，就先到这里吧。一起加油！
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-        <tag>更新说明</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>提示词要不要讲礼貌：大创项目小记</title>
     <url>/2026/05/16/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%A6%81%E4%B8%8D%E8%A6%81%E8%AE%B2%E7%A4%BC%E8%B2%8C%EF%BC%9A%E5%A4%A7%E5%88%9B%E9%A1%B9%E7%9B%AE%E5%B0%8F%E8%AE%B0/</url>
     <content><![CDATA[
@@ -173,17 +137,6 @@ Codes/ 里则是数据构建、实验运行、清洗、统计分析和出图脚�
         <tag>大语言模型</tag>
         <tag>提示词工程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>新年快乐！！</title>
-    <url>/2024/12/31/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90%EF%BC%81%EF%BC%81/</url>
-    <content><![CDATA[新年快乐！！！
-
-马上就到2025年了，是阿猹的高考年，也会是阿猹重新正式开始写歌的一年！
-春节可能会有新歌噢！
-阿猹提前祝大家，在新的一年里，每天开心，吃饱饱穿暖暖，做一个可爱的人！
-新年快乐鸭！~
-]]></content>
   </entry>
   <entry>
     <title>我有一个特别好的女朋友</title>
@@ -365,64 +318,6 @@ Codes/ 里则是数据构建、实验运行、清洗、统计分析和出图脚�
       </tags>
   </entry>
   <entry>
-    <title>更新说明</title>
-    <url>/2026/03/11/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%202026.3.11/</url>
-    <content><![CDATA[2026.3.11 更新说明
-
-
-
-
-
-
-添加了 Groceries Box 里的 ASCII Art Converter 板块 (就是一个图片转 ASCII 字符画的小工具)。
-排版了 Groceries Box 的卡片样式。
-添加了 Groceries Box 里的 Emoji Combiner 板块，使用 Cloudflare Workers AI，调用模型 llama-4-scout-17b-16e-instruct ，通过 Cloudflare Workers 完成前后端对接。
-添加了 ASCII Art Converter 的 “切换显示底色” 功能，添加了一键复制生成结果的功能。
-添加了 Emoji Combiner 的表情选择数量，修改了表情显示的排列方式。
-修改了 ASCII Art Converter 的输出结果显示逻辑，修复了由于图片过大而导致无法完整显示输出结果的 Bug。
-由于 Cloudflare Workers AI在国内无法访问，Emoji Combiner 的输出结果无法显示，将 Emoji Combiner 本体移植到 Vercel 进行云端部署，借用 Vercel 的加速节点来实现访问 Cloudflare Workers AI。
-添加了 Groceries Box 卡片的边框特效样式。
-添加了 ASCII Art Converter 和 Emoji Combiner 的手机端适配。
-添加了 Groceries Box 里的 PDF Craft （https://github.com/PDFCraftTool/pdfcraft）这个开源 PDF 在线编辑器，将其部署到 Vercel 进行快速访问。
-修改了文章《收拾，整理，以及翻新…》里引用 GitHub 项目链接错误的问题。
-修改了一些文章和杂货箱卡片的 Tag。
-]]></content>
-      <categories>
-        <category>更新说明</category>
-      </categories>
-      <tags>
-        <tag>更新说明</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>更新说明</title>
-    <url>/2026/03/29/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%202026.3.29/</url>
-    <content><![CDATA[2026.3.29 更新说明
-
-
-
-
-
-添加了一个表情包风格的扫雷游戏（Fork 自https://github.com/muan/emoji-minesweeper）
-添加了友情链接板块，欢迎来和阿猹交换友链！~😘
-添加了基于 Microsoft Azure 云服务器搭建的，基于开源项目 Cloudreve （https://github.com/cloudreve/cloudreve）的，基于 OneDrive 存储的，基于我申请好久才申请下来的 GitHub Education 学生认证的（bushi）云盘，目前容量 5T ，以后有💴了可能会考虑用 NAS 存储（因为 OneDrive 稳定性有待商榷😟不过白嫖嘛……就轮不到我抱怨稳定性了哈哈😂）
-添加了基于开源项目 Alist （https://github.com/AlistGo/alist）和百度网盘 WebDAV 功能搭建的网盘（没错，要和云盘区别一下），由于一些原因暂不开放使用。
-休息了一段时间……学校事儿挺多的😥
-添加了基于开源项目 EmulatorJS （https://github.com/EmulatorJS/EmulatorJS）搭建的在线街机平台（游戏本体资源系网络收集）。起初打算用 Cloudreve 云盘存储游戏本体的ROM文件，但是后来发现 Cloudreve 的直链不固定，用本地 WebDAV 搞半天死活也搞不好（已经给白嫖的服务器搞崩两次了🥹），于是果断换了 Alist 网盘，使用 Vercel 给百度网盘传过来的链接解密，搞了好久才终于搞好这个东西……
-添加了一个强大的在线开发人员工具箱IT Tools （https://github.com/CorentinTh/it-tools），这是目前为止最轻松的一个项目了……只用我 Fork 一下原项目，去 Vercel 上部署（没报过错），然后去 Cloudflare 改一下 DNS，把 Vercel 给的域名换成我的网站域名就完了……真希望以后每个项目都能这么轻松……😂
-添加了一个很有意思的文本加密工具 Abracadabra 魔曰（https://github.com/SheepChef/Abracadabra）&gt;（所以为什么要去这么奇怪的名字啊喂），也没花多少时间，和 IT Tools 差不多吧，步骤也一样，不过中途发现 Fork 错项目了（？），没办法，看板娘可爱捏！~😘
-添加了一个很强大的、将宝可梦与轻度 Rogue 结合起来的在线小游戏，但是我目前还没时间玩（
-
-添加了 Groceries Box 杂货箱的分类功能以及视图切换功能（因为里边的东西越来越多了，这样子应该会方便些吧😎）
-]]></content>
-      <categories>
-        <category>更新说明</category>
-      </categories>
-      <tags>
-        <tag>更新说明</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数模A题小记：把校园圈项目先跑起来！</title>
     <url>/2026/05/16/%E6%95%B0%E6%A8%A1A%E9%A2%98%E5%B0%8F%E8%AE%B0-%E6%8A%8A%E6%A0%A1%E5%9B%AD%E5%9C%88%E9%A1%B9%E7%9B%AE%E5%85%88%E8%B7%91%E8%B5%B7%E6%9D%A5/</url>
     <content><![CDATA[
@@ -542,13 +437,13 @@ Adamic-Adar 指标
 活跃时段是否一致
 话题参与度相似程度
 
-当前推荐前三是：
+最后论文里采用的推荐前三是：
+S146
+S24
 S2
-S3
-S9
 
-比较有意思的是，这三个候选人不是单靠“属性很像”冲上来的，而是和 S11 有比较多共同邻居。也就是说，他们可能早就在同一个社交半径里绕来绕去了，只是好友关系还没有连上。
-这就很适合写推荐理由：不是系统硬塞一个陌生人，而是把“你们其实已经离得很近”这件事说出来。
+比较有意思的是，这三个候选人刚好代表了三种推荐逻辑。S146 更像是画像匹配型：专业、年级、活跃习惯和 S11 都比较接近。S24 则是共同社团和共同好友带来的潜在接触机会。S2 还是那个很强的二阶关系选手，和 S11 有不少共同好友，适合做跨圈层连接。
+这就很适合写推荐理由：不是系统硬塞三个陌生人，而是分别把“你们像”“你们可能常碰到”“你们其实离得很近”这几件事说清楚。
 第三问：科技类消息该让谁先发
 
 第三问是信息传播。
@@ -563,16 +458,17 @@ k-core
 发帖数量
 科技类话题参与度
 
-目前排在前面的用户是：
+最后论文里把静态关键用户评分和 Monte Carlo 传播仿真合在一起看，科技类话题的最优种子用户是：
 S6
-S14
-S3
-S7
-S45
 
-其中 S6 当前综合分最高。
-不过这问还没有完全收口。题目要求的是中午 12 点发帖后 48 小时内的传播过程，所以后面还要把传播仿真补上，不能只停在“谁看起来比较重要”。
-这也是之后论文里最需要继续补强的部分。
+备选关键用户是 S3 和 S4。其中 S6 在 48 小时内的平均覆盖人数达到约 199.13，基本已经接近全网覆盖了。
+这里也算是把第三问收口了：不只停在“谁看起来比较重要”，而是真的把中午 12 点发帖后的 48 小时扩散过程跑了一遍。
+看着覆盖人数一点点往上爬的时候，确实有一种“这个校园圈怎么这么快就传遍了”的感觉。
+选做题也顺手打完了
+
+第四问是文化类话题的定向推送策略。简单说，就是每天最多推 10 个人、两天一共 20 个名额，怎么选人才能让文化类内容传得更开。
+最后采用的是“高相关初始解 + 阶段贪心 + 局部交换修正”的思路。听起来有点长，其实人话版就是：先找对文化类话题本来就比较敏感的人，再一边看传播效果一边补一些能跨社群带路的人。
+论文里的优化方案在 48 小时内平均覆盖约 199.80 人，已经非常接近 200 人全网覆盖了。这个结果有点离谱，但数据规模就 200 个节点，扩散一旦跑起来，确实很容易接近满图。
 论文工程也搭了一份
 
 论文这边用了 LaTeX，主文件单独放，正文分在 sections 里：
@@ -610,21 +506,21 @@ Louvain 好用，但不是每台电脑都有。所以第一问脚本加了回退
 目前到哪了
 
 现在这个项目已经不是空架子了。
-分析工作区能跑，论文工程能编译，第一问的社群结果和图比较完整，第二问已经有 S11 的前三推荐，第三问也有科技类关键用户的初筛。
-后面还要补的主要是：
+分析工作区能跑，论文工程能编译，第一问的社群结果和图比较完整，第二问有 S11 的最终前三推荐，第三问有科技类传播仿真，第四问也补上了文化类定向推送策略。
+最后论文里大概收成了这些结果：
 
-第二问、第三问正文再写厚一点；
-第三问传播仿真继续补；
-把结果图表和论文里的解释统一起来；
-最后检查 LaTeX 的版式和告警。
+第一问：Louvain 划分出 10 个社群，模块度约 0.247199；
+第二问：给 S11 推荐 S146 / S24 / S2；
+第三问：科技类话题最优传播种子是 S6，48 小时平均覆盖约 199.13 人；
+第四问：文化类推送优化方案 48 小时平均覆盖约 199.80 人。
 
-总之，从“我该从哪里开始啊”进化到了“这几块还要继续补”。虽然听起来还是要干活，但至少已经能看见路了。
+总之，从“我该从哪里开始啊”进化到了“结果终于能写进论文里了”。虽然过程里还是有一堆表格、图、脚本和版式要收拾，但至少最后不是一地散件了。
 
 这次搭项目最大的感觉是：数模比赛真的不只是建模。
 它还包括读题、清数据、搭目录、写脚本、分工、跑结果、画图、写论文、改格式……每一步都不算惊天动地，但每一步漏掉都可能在最后狠狠咬你一口。
 不过，把这些东西一点点收拾起来以后，原本很吓人的题目也会慢慢变成一个能推进的工程。
 那么这篇就先记到这里啦。
-希望后面第三问传播仿真和论文终稿也能顺利收掉。阿猹继续加油！😎
+论文也放在下面了，感兴趣的话可以直接展开看。阿猹继续加油！😎
 论文原文
 
 如果想看更完整的建模过程和论文正文，也可以在这里直接翻 PDF。不过它毕竟是比赛论文，和上面这种碎碎念不是一个阅读速度，建议找个有耐心的时间慢慢看（
@@ -645,6 +541,111 @@ Louvain 好用，但不是每台电脑都有。所以第一问脚本加了回退
         <tag>项目记录</tag>
         <tag>数学建模</tag>
         <tag>社交网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>收拾，整理，以及翻新...</title>
+    <url>/2026/03/08/%E6%94%B6%E6%8B%BE%EF%BC%8C%E6%95%B4%E7%90%86%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%BF%BB%E6%96%B0/</url>
+    <content><![CDATA[
+
+
+
+是一些碎碎念啊……
+
+
+
+好久没有进行这个网站的维护工作了，甚至，可以说，连最基本的发送博客文章也没有……仿佛这个博客网站只是在高三紧张学习节点的寒假期间找到的一个缓解压力方式罢了。进入大学，学习，游戏，亦或是杂七杂八的事情，仿佛也跟本没有为这个小小的网站留一片栖存之地。若不是寒假作业（Tinyhttpd-Refactored）的存在，或许阿猹的小窝还会在我电脑一隅尘封良久……
+不管怎么样，我终究还是想起你了，不是吗😎
+收拾起了以前没有做完的旧摊子，把 About，Categories 和 Tags 这三个板块全部做完了（其实就是在终端创建一个文章的事儿，之前却一直没有弄……）
+随后加入了 Archives 页面内的站内帖子搜索功能，加入了博客文章的评论功能。
+一开始使用 Giscus ，但是后来发现 Giscus 必须登录 Github 才可以发送评论……于是换成了 Twikoo （https://github.com/twikoojs/twikoo）。
+Twikoo 使用了免费的MongoDB数据库，然后在 Vercel 上云端部署了 Twikoo，并将 Twikoo 连接到了我的 Hexo 主题里。
+在部署好了 Twikoo 后，开通了即时消息推送（使用 Qmsg酱）以及邮件通知提醒。并且给 Twikoo 加了 Cloudflare Turnstile 验证码（别说，Cloudflare 还真不愧是我们的赛博菩萨😂）
+随后加入了鼠标轨迹显示、FPS显示、网页名称变化以及 APlayer 播放器，里面塞了我的一个网易云歌单。简单做了一个毛玻璃效果，加入了一个旋钮开关并同时做了手机端适配。后来优化了一下网页性能。用 Vercel 给网页做了分流，加快了国内访问本网站的速度。
+加入了网页访问量统计。
+然后加入了Groceries Box页面，里面存放我弄的乱七八糟的小东西们。首先是 Dino Run（https://wayou.github.io/t-rex-runner/），Chrome的小彩蛋，一个基于 HTML，十分经典的恐龙快跑小游戏。
+然后加入了 Qexo ——管理 Hexo 的开源在线后台 （https://github.com/Qexo/Qexo），同样使用 MongoDB 数据库，Vercel 部署。同时给网页菜单栏加入了 Write! 板块，直接通向这个后台。
+在上数据结构课程的时候看到 HelloGithub 公众号发布的文章（真的是很棒的一个公众号！）里提到一个 JS 项目 cloud-mail（https://github.com/maillab/cloud-mail），于是萌生出制作一个以自己域名结尾的专属邮箱的想法。这个邮箱系统基于 Cloudflare Workers。利用 Cloudflare Email Routing 接收邮件，转交给 Cloudflare Workers 处理，最后把邮件正文存在 Cloudflare D1 这个边缘 SQL 数据库里。
+
+以后还会加一些什么功能呢？就看我能在Github上找到什么好东西吧！
+至少，按时更新帖子才是重要的😜
+那么，就先到这里吧。一起加油！
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>更新说明</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>更新说明</title>
+    <url>/2026/03/11/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%202026.3.11/</url>
+    <content><![CDATA[2026.3.11 更新说明
+
+
+
+
+
+
+添加了 Groceries Box 里的 ASCII Art Converter 板块 (就是一个图片转 ASCII 字符画的小工具)。
+排版了 Groceries Box 的卡片样式。
+添加了 Groceries Box 里的 Emoji Combiner 板块，使用 Cloudflare Workers AI，调用模型 llama-4-scout-17b-16e-instruct ，通过 Cloudflare Workers 完成前后端对接。
+添加了 ASCII Art Converter 的 “切换显示底色” 功能，添加了一键复制生成结果的功能。
+添加了 Emoji Combiner 的表情选择数量，修改了表情显示的排列方式。
+修改了 ASCII Art Converter 的输出结果显示逻辑，修复了由于图片过大而导致无法完整显示输出结果的 Bug。
+由于 Cloudflare Workers AI在国内无法访问，Emoji Combiner 的输出结果无法显示，将 Emoji Combiner 本体移植到 Vercel 进行云端部署，借用 Vercel 的加速节点来实现访问 Cloudflare Workers AI。
+添加了 Groceries Box 卡片的边框特效样式。
+添加了 ASCII Art Converter 和 Emoji Combiner 的手机端适配。
+添加了 Groceries Box 里的 PDF Craft （https://github.com/PDFCraftTool/pdfcraft）这个开源 PDF 在线编辑器，将其部署到 Vercel 进行快速访问。
+修改了文章《收拾，整理，以及翻新…》里引用 GitHub 项目链接错误的问题。
+修改了一些文章和杂货箱卡片的 Tag。
+]]></content>
+      <categories>
+        <category>更新说明</category>
+      </categories>
+      <tags>
+        <tag>更新说明</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新年快乐！！</title>
+    <url>/2024/12/31/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90%EF%BC%81%EF%BC%81/</url>
+    <content><![CDATA[新年快乐！！！
+
+马上就到2025年了，是阿猹的高考年，也会是阿猹重新正式开始写歌的一年！
+春节可能会有新歌噢！
+阿猹提前祝大家，在新的一年里，每天开心，吃饱饱穿暖暖，做一个可爱的人！
+新年快乐鸭！~
+]]></content>
+  </entry>
+  <entry>
+    <title>更新说明</title>
+    <url>/2026/03/29/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%202026.3.29/</url>
+    <content><![CDATA[2026.3.29 更新说明
+
+
+
+
+
+添加了一个表情包风格的扫雷游戏（Fork 自https://github.com/muan/emoji-minesweeper）
+添加了友情链接板块，欢迎来和阿猹交换友链！~😘
+添加了基于 Microsoft Azure 云服务器搭建的，基于开源项目 Cloudreve （https://github.com/cloudreve/cloudreve）的，基于 OneDrive 存储的，基于我申请好久才申请下来的 GitHub Education 学生认证的（bushi）云盘，目前容量 5T ，以后有💴了可能会考虑用 NAS 存储（因为 OneDrive 稳定性有待商榷😟不过白嫖嘛……就轮不到我抱怨稳定性了哈哈😂）
+添加了基于开源项目 Alist （https://github.com/AlistGo/alist）和百度网盘 WebDAV 功能搭建的网盘（没错，要和云盘区别一下），由于一些原因暂不开放使用。
+休息了一段时间……学校事儿挺多的😥
+添加了基于开源项目 EmulatorJS （https://github.com/EmulatorJS/EmulatorJS）搭建的在线街机平台（游戏本体资源系网络收集）。起初打算用 Cloudreve 云盘存储游戏本体的ROM文件，但是后来发现 Cloudreve 的直链不固定，用本地 WebDAV 搞半天死活也搞不好（已经给白嫖的服务器搞崩两次了🥹），于是果断换了 Alist 网盘，使用 Vercel 给百度网盘传过来的链接解密，搞了好久才终于搞好这个东西……
+添加了一个强大的在线开发人员工具箱IT Tools （https://github.com/CorentinTh/it-tools），这是目前为止最轻松的一个项目了……只用我 Fork 一下原项目，去 Vercel 上部署（没报过错），然后去 Cloudflare 改一下 DNS，把 Vercel 给的域名换成我的网站域名就完了……真希望以后每个项目都能这么轻松……😂
+添加了一个很有意思的文本加密工具 Abracadabra 魔曰（https://github.com/SheepChef/Abracadabra）&gt;（所以为什么要去这么奇怪的名字啊喂），也没花多少时间，和 IT Tools 差不多吧，步骤也一样，不过中途发现 Fork 错项目了（？），没办法，看板娘可爱捏！~😘
+添加了一个很强大的、将宝可梦与轻度 Rogue 结合起来的在线小游戏，但是我目前还没时间玩（
+
+添加了 Groceries Box 杂货箱的分类功能以及视图切换功能（因为里边的东西越来越多了，这样子应该会方便些吧😎）
+]]></content>
+      <categories>
+        <category>更新说明</category>
+      </categories>
+      <tags>
+        <tag>更新说明</tag>
       </tags>
   </entry>
   <entry>
